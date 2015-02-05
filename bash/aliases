@@ -1,0 +1,40 @@
+# cd
+alias ..='cd ..'
+
+alias vi='vim'
+
+# clipboard
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+
+# pager
+alias less='less -R'
+alias more='more -R'
+
+# irssi
+alias irssi="TERM=screen-256color irssi";
+alias irc="if tmux has-session -t irssi; then tmux attach -t irssi; else tmux new -s irssi 'TERM=screen-256color irssi'; fi"
+
+# ls
+alias ls="ls $LS_OPTIONS -F"
+alias l="ls $LS_OPTIONS -lAh"
+alias ll="ls $LS_OPTIONS -l"
+alias la="ls $LS_OPTIONS -A"
+
+alias du='du -hc'
+alias more='less'
+alias c='clear'
+
+# git
+alias gd='git_diff'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gb='git branch'
+alias gs='clear;git status -sb'
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias gpom='git push origin HEAD:refs/for/master'
+alias gitv="vim -c 'Gitv' ."
+
+# wget as regular browser
+alias wgets='wget --referer="http://www.google.com" --user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6" --header="Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5" --header="Accept-Language: en-us,en;q=0.5" --header="Accept-Encoding: gzip,deflate" --header="Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7" --header="Keep-Alive: 300"'
