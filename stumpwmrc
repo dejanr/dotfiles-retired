@@ -1,10 +1,10 @@
 (in-package :stumpwm)
 
-(setf *home-dir*      (make-pathname :directory (getenv "HOME"))
-      *stump-dir*     (merge-pathnames (make-pathname :directory '(:relative ".stumpwm")) *home-dir*)
-      *data-dir*      (merge-pathnames (make-pathname :directory '(:relative "storage")) *stump-dir*)
-      *undo-data-dir* (make-pathname :directory "/dev/shm/.1009")
-      *debug-file*    (merge-pathnames (make-pathname :name "debug") *stump-dir*)
+(setf *home-dir*       (make-pathname :directory (getenv "HOME"))
+      *stump-dir*      (merge-pathnames (make-pathname :directory '(:relative ".stumpwm")) *home-dir*)
+      *data-dir*       (merge-pathnames (make-pathname :directory '(:relative "storage")) *stump-dir*)
+      *undo-data-dir*  (make-pathname :directory "/dev/shm/.1009")
+      *debug-file*     (merge-pathnames (make-pathname :name "debug") *stump-dir*)
       *scratchpad-group-name* ".scratch")
 
 (load-module "mpd")
@@ -85,8 +85,16 @@
 (make-groups-bg "web")
 (if (probe-file (data-dir-file "desktop.lisp"))
   (restore-from-file (data-dir-file "desktop.lisp")))
-;; (restore-window-placement-rules (data-dir-file "tile-rules.lisp"))
+(restore-window-placement-rules (data-dir-file "tile-rules.lisp"))
 (cond ((string-equal (group-name (current-group)) *scratchpad-group-name*) (gother)))
+
+;; Start the windows manager
+(when (equal (run-shell-command "pgrep compton" t) "")
+  (run-shell-command "compton --config ~/.compton.conf -b" ))
+
+(run-shell-command (concatenate 'string
+                                "feh --bg-scale "
+                                "/home/dejanr/.dotfiles/wallpapers/leefs.jpg"))
 
 ;;-------~---~----------~----------~----
 ;; Load
