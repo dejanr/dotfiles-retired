@@ -1,0 +1,199 @@
+settings = {
+  core = {
+    real_name = "Dejan Ranisavljevic";
+    user_name = "dejanr";
+    nick = "dejanr";
+    log_close_string = "--- Log closed %a %b %d %H:%M:%S %Y";
+    log_timestamp = "(%H:%M) ";
+    log_day_changed = "--- Day changed %a %b %d %Y";
+  };
+  "fe-text" = { actlist_sort = "refnum"; autostick_split_windows = "no"; };
+  "fe-common/core" = {
+    beep_when_window_active = "yes";
+    theme = "default";
+    autolog = "on";
+    autolog_path = "/Users/dejanr/.irssi/logs/$tag/$0.log";
+    autolog_level = "all";
+    autoclose_windows = "no";
+    autocreate_windows = "yes";
+    use_status_window = "no";
+    hilight_color = "= %Y";
+    timestamps = "no";
+    autocreate_own_query = "no";
+    autocreate_query_level = "DCCMSGS";
+    use_msgs_window = "no";
+    reuse_unused_windows = "yes";
+    windows_auto_renumber = "no";
+    print_active_channel = "yes";
+  };
+  "perl/core/scripts" = {
+    growl_server = "localhost";
+    growl_password = "";
+    growl_on_regex = " .*";
+    first_away_message = "";
+    second_away_message = "";
+    first_away_timeout = "1800";
+    second_away_timeout = "3600";
+    crapbuster_levels = "JOINS PARTS QUITS NICKS CLIENTCRAP CRAP MODE TOPICS KICKS";
+    awl_block = "-14";
+    awl_viewer = "no";
+    awl_sbar_maxlength = "no";
+    fancy_abbrev = "no";
+    awl_mouse = "yes";
+  };
+  "fe-common/irc" = { group_multi_mode = "yes"; };
+};
+
+servers = (
+  {
+    address = "irc.freenode.org";
+    chatnet = "fn";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+  fn = {
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "5";
+    max_whois = "4";
+    max_query_chans = "5";
+    autosendcmd = "/msg nickserv identify password;";
+  };
+};
+
+channels = (
+  { name = "#coreos"; chatnet = "fn"; autojoin = "Yes"; },
+  { name = "#nixos"; chatnet = "fn"; autojoin = "Yes"; },
+  { name = "#javascript"; chatnet = "fn"; autojoin = "Yes"; },
+  { name = "#node.js"; chatnet = "fn"; autojoin = "Yes"; },
+  { name = "#angularjs"; chatnet = "fn"; autojoin = "Yes"; }
+  { name = "#reactjs"; chatnet = "fn"; autojoin = "Yes"; }
+  { name = "#reprap"; chatnet = "fn"; autojoin = "Yes"; }
+);
+
+aliases = { };
+
+statusbar = {
+  default = {
+    window = {
+      items = {
+        barstart = { priority = "100"; };
+        time = { };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+        typing_notice = { };
+        join_notice = { };
+      };
+      disabled = "yes";
+    };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+
+hilights = ( { text = "dejanr"; nick = "no"; word = "yes"; } );
+
+ignores = ( { level = "JOINS PARTS QUITS MODES TOPICS NICKS"; } );
+
+logs = { };
+
+windows = {
+  1 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        Rame = "#coreos";
+        tag = "fn";
+      }
+    );
+  };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        Rame = "#nixos";
+        tag = "fn";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#javascript";
+        tag = "fn";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#node.js";
+        tag = "fn";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#angularjs";
+        tag = "fn";
+      }
+    );
+  };
+  6 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#reactjs";
+        tag = "fn";
+      }
+    );
+  };
+  7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#reprap";
+        tag = "fn";
+      }
+    );
+  };
+  8 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "highlite";
+        tag = "fn";
+      }
+    );
+  };
+};
+mainwindows = { 1 = { first_line = "1"; lines = "32"; }; };
+keyboard = ( 
+  { key = "meta-[M"; id = "command"; data = "mouse_xterm "; }
+);
