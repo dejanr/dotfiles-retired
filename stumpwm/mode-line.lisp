@@ -13,6 +13,9 @@
        "^>" ; right align
        "%c" ; cpu
        "| %M " ; mem
+       "| Battery: "
+       '(:eval (string-right-trim '(#\Newline) (run-shell-command "acpi | tr -s ' ' | cut -d ' ' -f 4 | head -c 3" t)))
+       " "
        '(:eval (string-right-trim '(#\Newline) (run-shell-command "date +'| %A %d %b ^7*^B%H:%M^b^n'" t)))
        ))
 

@@ -71,6 +71,7 @@ channels = (
   { name = "#nixos"; chatnet = "fn"; autojoin = "Yes"; },
   { name = "#javascript"; chatnet = "fn"; autojoin = "Yes"; },
   { name = "#node.js"; chatnet = "fn"; autojoin = "Yes"; },
+  "k",
   { name = "#angularjs"; chatnet = "fn"; autojoin = "Yes"; },
   { name = "#reactjs"; chatnet = "fn"; autojoin = "Yes"; },
   { name = "#reprap"; chatnet = "fn"; autojoin = "Yes"; }
@@ -173,6 +174,16 @@ windows = {
     );
   };
   7 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#reprap";
+        tag = "fn";
+      }
+    );
+  };
+  8 = {
     items = (
       {
         type = "CHANNEL";
