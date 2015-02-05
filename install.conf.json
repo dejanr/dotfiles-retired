@@ -1,8 +1,7 @@
 [
     {
         "meta" : {
-            "title" : "X Resources",
-            "description" : "Xdefaults and Xmodmap"
+            "title" : "Xdefaults and Xmodmap"
         },
         "link" : {
             "~/.Xdefaults" : "Xdefaults",
@@ -20,7 +19,6 @@
     {
         "meta" : {
             "title" : "Vim",
-            "description" : "Vim and vimrc"
         },
         "link" : {
             "~/.vim" : "vim",
@@ -48,8 +46,7 @@
     },
     {
         "meta" : {
-            "title" : "Other",
-            "description" : "Other usefull tools"
+            "title" : "Other configurations"
         },
         "link" : {
             "~/.config" : "config",
