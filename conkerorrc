@@ -1,1 +1,6 @@
 user_pref('layout.css.devPixelsPerPx', '1.5');
+
+define_key(default_base_keymap, "s-c", "cmd_copy");
+define_key(default_base_keymap, "s-v", "cmd_paste");
+define_key(default_base_keymap, "s-a", "cmd_selectAll");
+define_key(text_keymap, "C-w", "cmd_deleteWordBackward");
