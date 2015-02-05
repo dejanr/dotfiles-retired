@@ -1,3 +1,6 @@
 [submodule "vim/bundle/vundle"]
 	path = vim/bundle/vundle
 	url = git://github.com/gmarik/vundle.git
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/csivanich/dotbot.git

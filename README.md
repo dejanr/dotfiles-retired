@@ -9,7 +9,7 @@ You may also be interested in my [nixos configuration](https://github.com/dejanr
 ```bash
     git clone git://github.com/dejanr/dotfiles ~/.dotfiles
     cd ~/.dotfiles
-    rake install
+    ./install.sh
 ```
 
 ## Vim bundles

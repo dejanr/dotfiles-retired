@@ -1,0 +1,86 @@
+[
+    {
+        "meta" : {
+            "title" : "X Resources",
+            "description" : "Xdefaults and Xmodmap"
+        },
+        "link" : {
+            "~/.Xdefaults" : "Xdefaults",
+            "~/.Xmodmap" : "Xmodmap"
+        }
+    },
+    {
+        "meta" : {
+            "title" : "Compton configuration"
+        },
+        "link" : {
+            "~/.compton.conf" : "compton.conf"
+        }
+    },
+    {
+        "meta" : {
+            "title" : "Vim",
+            "description" : "Vim and vimrc"
+        },
+        "link" : {
+            "~/.vim" : "vim",
+            "~/.vimrc" : "vimrc"
+        }
+    },
+    {
+        "meta" : {
+            "title" : "Bash"
+        },
+        "link" : {
+            "~/.bin" : "bin",
+            "~/.bash" : "bash",
+            "~/.bashrc" : "bashrc"
+        }
+    },
+    {
+        "meta" : {
+            "title" : "stumpwm"
+        },
+        "link" : {
+            "~/.stumpwm" : "stumpwm",
+            "~/.stumpwmrc" : "stumpwmrc"
+        }
+    },
+    {
+        "meta" : {
+            "title" : "Other",
+            "description" : "Other usefull tools"
+        },
+        "link" : {
+            "~/.config" : "config",
+            "~/.emacs.d" : "emacs.d",
+            "~/.irssi" : "irssi",
+            "~/.ackrc" : "ackrc",
+            "~/.conkerorrc" : "conkerorrc",
+            "~/.ctags" : "ctags",
+            "~/.curlrc" : "curlrc",
+            "~/.dir_colors" : "dir_colors",
+            "~/.eslintrc" : "eslintrc",
+            "~/.gemrc" : "gemrc",
+            "~/.gemrc" : "gemrc",
+            "~/.gitconfig" : "gitconfig",
+            "~/.gitk" : "gitk",
+            "~/.gvimrc" : "gvimrc",
+            "~/.hushlogin" : "hushlogin",
+            "~/.inputrc" : "inputrc",
+            "~/.irbrc" : "irbrc",
+            "~/.jshintrc" : "jshintrc",
+            "~/.my.cnf" : "my.cnf",
+            "~/.profile" : "profile",
+            "~/.psqlrc" : "psqlrc",
+            "~/.tmux.conf" : "tmux.conf",
+            "~/.treerc" : "treerc"
+        }
+    },
+    {
+        "clean" : ["~"],
+        "meta" : {
+            "title" : "Clean symlinks which have moved"
+        }
+    }
+]
