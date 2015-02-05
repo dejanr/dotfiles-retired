@@ -1,0 +1,109 @@
+UXTerm*foreground: white
+UXTerm*background: black
+
+! Xcursor --------------------------------------------------------------------
+Xcursor.theme: Vanilla-DMZ-AA
+Xcursor.size: 15
+
+! terminal colors ------------------------------------------------------------
+
+*background:  #000000
+*foreground:  #aaaaaa
+! Black
+*color0:      #000000
+*color8:      #555753
+! Red
+*color1:      #ff6565
+*color9:      #ff8d8d
+! Green
+*color2:      #93d44f
+*color10:     #c8e7a8
+! Yellow
+*color3:      #eab93d
+*color11:     #ffc123
+! Blue
+*color4:      #204a87
+*color12:     #3465a4
+! Mangenta
+*color5:      #ce5c00
+*color13:     #f57900
+! Cyan
+*color6:      #89b6e2
+*color14:     #46a4ff
+! White
+*color7:      #cccccc
+*color15:     #ffffff
+
+! rxvt-unicode ---------------------------------------------------------------
+
+!-- Xft settings -- !
+Xft.dpi:        96
+Xft.autohint:   0
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
+Xft.hinting:    1
+Xft.antialias:  1
+Xft.hintstyle:  hintfull
+Xft.rgba:       rgb
+
+!for antialiased fonts (using Xft)
+urxvt.font:     xft:Bitstream Vera Sans Mono:size=15
+urxvt.boldFont: xft:Bitstream Vera Sans Mono:bold:size=15
+!urxvt*font:     xft:Dejavu Sans Mono:pixelsize=15:antialias=true:hinting=true
+!urxvt*boldFont: xft:Dejavu Sans Mono:pixelsize=15:antialias=true:hinting=true
+!urxvt*font:     xft:Pragmata:pixelsize=13
+!urxvt*boldFont: xft:Pragmata:pixelsize=13
+
+!for normal X11 fonts:
+!urxvt*font:      -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+!urxvt*boldFont:  -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+!urxvt*font:      -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
+!urxvt*boldFont:  -*-dina-medium-r-*-*-16-*-*-*-*-*-*-*
+!urxvt*font:      -*-proggyclean-*-*-*-*-*-*-*-*-*-*-*-*
+!urxvt*boldFont:  -*-proggyclean-*-*-*-*-*-*-*-*-*-*-*-*
+!urxvt*font:      -*-proggysquaresz-*-*-*-*-*-*-*-*-*-*-*-*
+!urxvt*boldFont:  -*-proggysquaresz-*-*-*-*-*-*-*-*-*-*-*-*
+
+urxvt.scrollstyle:          plain
+urxvt.cursorBlink:          true
+urxvt.cursorUnderline:      false
+urxvt.geometry:             160x50
+urxvt.internalBorder:       5
+urxvt.fading:               20
+urxvt.shading:              80
+urxvt.tintColor:            #222222
+urxvt.inheritPixmap:        false
+!urxvt.depth:                24
+urxvt*depth:                32
+urxvt.saveLines:            32767
+urxvt.visualBell:           false
+urxvt.scrollTtyKeypress:    true
+urxvt.scrollWithBuffer:     false
+urxvt.scrollTtyOutput:      false
+urxvt.scrollBar:            false
+urxvt.scrollstyle:          plain
+urxvt.scrollBar_right:      true
+urxvt.scrollColor:          #777777
+urxvt.cursorColor:          #ffcc00
+urxvt.loginShell:           true
+urxvt.termName:             urxvt
+urxvt.cutchars:             "()*,<>[]{}|'
+urxvt.print-pipe:           cat > $(echo urxvt.dump.`date +'%Y%M%d%H%m%S'`)
+urxvt.secondaryScroll:      true
+urxvt.mapAlert:             true
+urxvt.utmpInhibit:          true
+URxvt.perl-ext:             default,clipboard,clipboard-osc,matcher
+URxvt.perl-ext-common:      default,clipboard,clipboard-osc,matcher
+URxvt.perl-lib:             /home/dejanr/.urxvt
+URxvt.keysym.M-c:           perl:clipboard:copy
+URxvt.keysym.M-v:           perl:clipboard:paste
+URxvt.clipboard.copycmd:    pbcopy
+URxvt.clipboard.pastecmd:   pbpaste
+URxvt.url-select.underline: true
+urxvt.url-launcher:         firefox
+urxvt.matcher.button:       1
+urxvt.background:           #000000
+urxvt.colorUL:              #4682B4
+
+URxvt.keysym.C-Left:        \033[1;3D
+URxvt.keysym.C-Right:       \033[1;3C

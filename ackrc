@@ -1,0 +1,39 @@
+# lexically sort filenames
+--sort-files
+
+# Highlight the matching text
+--color
+
+# Print 1 line of context before and after a matching line
+# --context=1
+
+# Follow symlinks
+--follow
+
+# Print a filename heading above each file's results and
+# print a break between results from different files
+--group
+
+# Introduce new types to ack
+--type-set=tpl=.tpl
+--type-set=jst=.jst
+--type-set=conf=.conf
+--type-set=scss=.scss
+--type-set=yml=.yml
+--type-set=coffee=.coffee
+--type-set=twig=.twig
+--type-set=jade=.jade
+
+# Ignore directories by default
+--ignore-dir=_compiled
+--ignore-dir=web/js/build
+--ignore-dir=web/css
+--ignore-dir=web/.sass-cache
+--ignore-dir=_logs
+--ignore-dir=tests
+--ignore-dir=log
+--ignore-dir=cache
+--ignore-dir=node_modules
+--ignore-dir=vendor
+--ignore-dir=coverage
+--ignore-dir=public

@@ -1,0 +1,5 @@
+[default]
+ignore =
+  .treerc
+  vendor
+  node_modules

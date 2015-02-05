@@ -1,0 +1,28 @@
+[global_config]
+  focus = mouse
+  borderless = True
+
+[keybindings]
+  copy = <Super>c
+  paste = <Super>v
+
+[profiles]
+  [[default]]
+    autoclean_groups = False
+    background_image = None
+    use_system_font = False
+    cursor_color = "#93a1a1"
+    font = DejaVu Sans Mono 15
+    scrollback_infinite = True
+    scrollbar_position = disabled
+    show_titlebar = False
+
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

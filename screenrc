@@ -1,0 +1,37 @@
+# NOTE: You'll probably need to put
+#
+#  alias screen='TERM=screen screen'
+#
+# in your ~/.profile or ~/.bash_profile if when running screen, a backspace makes screen say "wuff wuff"
+ 
+# Make the control character ctrl-g, so familiar ctrl-a still goes to start of line rather than starting new window
+#escape ^Gg
+ 
+# use xterm scrollbars
+termcapinfo xterm ti@:te@
+termcapinfo xterm-color ti@:te@
+ 
+# bold colors
+attrcolor b ".I"
+
+startup_message off
+
+# change the hardstatus settings to give an window list at the bottom of the
+# screen. Not invented here! Could be one of a number of screen status strings
+# googled from elsewhere
+hardstatus alwayslastline 
+#hardstatus string '%{= kG}%{= kw}%?%-Lw%?%{r}[%{W}%n*%f%t%?(%u)%?%{r}]%{w}%?%+Lw%?%?%= %{g}'
+hardstatus string '%{= kG} %{G}%H %{g}%= %{= kw}%?%-Lw%?%{r}[%{W}%n* %f%t%?(%u)%?%{r}]%{w}%?%+Lw%?%?%= %{g}%{B} %d-%m %{W}%c %{g}'
+
+# now the meat. Start four named windows, one for mongrel, one for console, one for mysql and a bash
+# to switch windows, press ctrl-g and the number. So ctrl-g 2 for window 2. To toggle back and forth
+# between current and previous window, it's ctrl-g twice
+screen -t "console" 0
+stuff "./script/console\012"
+ 
+screen -t "terminal" 1
+
+escape ^zz
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r} (%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
+
