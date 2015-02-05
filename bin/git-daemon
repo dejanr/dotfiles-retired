@@ -1,0 +1,25 @@
+#!/bin/sh
+
+. /lib/lsb/init-functions
+
+GITDAEMON_OPTIONS="--reuseaddr --verbose --export-all --base-path=/home/dejanr/repositories/ --detach"
+
+case "$1" in
+start)  log_daemon_msg "Starting git-daemon"
+
+        start-stop-daemon --start -c dejanr:dejanr --quiet --background \
+                     --exec /usr/lib/git-core/git-daemon -- ${GITDAEMON_OPTIONS}
+
+        log_end_msg $?
+        ;;
+stop)   log_daemon_msg "Stopping git-daemon"
+
+        start-stop-daemon --stop --quiet --name git-daemon
+
+        log_end_msg $?
+        ;;
+*)      log_action_msg "Usage: /etc/init.d/git-daemon {start|stop}"
+        exit 2
+        ;;
+esac
+exit 0
