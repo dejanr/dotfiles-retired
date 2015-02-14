@@ -18,3 +18,8 @@ config/Trolltech.conf
 config/pulse
 stumpwm/storage
 gist-vim
+xmonad/xmonad-x86_64-linux
+xmonad/xmonad.errors
+xmonad/xmonad.hi
+xmonad/xmonad.o
+xmonad/history

@@ -37,11 +37,11 @@
     },
     {
         "meta" : {
-            "title" : "stumpwm"
+            "title" : "xmonad"
         },
         "link" : {
-            "~/.stumpwm" : "stumpwm",
-            "~/.stumpwmrc" : "stumpwmrc"
+            "~/.xmobarrc" : "xmobarrc",
+            "~/.xmonad" : "xmonad",
         }
     },
     {
