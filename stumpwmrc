@@ -115,3 +115,6 @@
                     "websearch"
                     "window_rules")
       do (load (merge-pathnames (make-pathname :name file :type "lisp") *stump-dir*)))
+
+
+;; vim: ft=lisp

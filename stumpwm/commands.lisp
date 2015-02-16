@@ -8,10 +8,6 @@
 (defcommand send-selection nil nil
             (window-send-string (get-x-selection)))
 
-(defcommand browser () ()
-            "Run-or-Raise Conkeror"
-            (run-or-raise "conkeror" '(:class "Conkeror")))
-
 (defcommand gimp () ()
             "Run-or-Raise Gimp"
             (run-or-raise "gimp" '(:class "Gimp")))

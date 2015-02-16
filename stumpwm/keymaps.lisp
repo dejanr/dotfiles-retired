@@ -67,7 +67,7 @@
   "Keymap for launching stuffs")
 (setf *launch-map*
       (let ((m (make-sparse-keymap)))
-      (define-key m (kbd "b")   "browser")
+      (define-key m (kbd "b")   "exec conkeror")
       (define-key m (kbd "a")   (format nil "exec ~A -e alsamixer" *terminal*))
       m))
 (define-key *top-map* (kbd "s-SPC") '*launch-map*)
