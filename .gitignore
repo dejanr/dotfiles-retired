@@ -5,6 +5,7 @@
 gitconfig
 hgrc
 vim/bundle/*
+!vim/bundle/vundle
 vim/.netrwhist
 vim/.VimballRecord
 ssh/known_hosts
