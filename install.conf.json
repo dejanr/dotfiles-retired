@@ -59,7 +59,6 @@
             "~/.dir_colors" : "dir_colors",
             "~/.eslintrc" : "eslintrc",
             "~/.gemrc" : "gemrc",
-            "~/.gemrc" : "gemrc",
             "~/.gitconfig" : "gitconfig",
             "~/.gitk" : "gitk",
             "~/.gvimrc" : "gvimrc",

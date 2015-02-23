@@ -2,7 +2,6 @@
 *.log
 *logs*
 .DS_Store
-gitconfig
 hgrc
 vim/bundle/*
 !vim/bundle/vundle
