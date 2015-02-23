@@ -128,6 +128,18 @@ Bundle 'Vitality'
 " Lisp
 Bundle 'kovisoft/slimv'
 
+" Clojure repl support
+Bundle "tpope/vim-fireplace"
+
+" Clojure runtime files
+Bundle "guns/vim-clojure-static"
+
+" Clojure Better rainbox Parentheses
+Bundle "kien/rainbow_parentheses.vim"
+
+" Clojure Better higlighting
+Bundle "guns/vim-clojure-highlight"
+
 " }}}
 
 " Global Stuff
