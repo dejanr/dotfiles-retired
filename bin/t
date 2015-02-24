@@ -46,7 +46,9 @@ else
   SESSION="$1"
 fi
 
-SESSION=${SESSION#.}
+# replaces all dots in session name
+# so directors with dots could be valid session names
+SESSION=${SESSION//\./_}
 
 _safe_window() {
   if [ -x "$2" ]; then

@@ -7,6 +7,7 @@ export GIT_EDITOR='vim'
 export ACK_PAGER_COLOR="less -R"
 export HOMEBREW_GITHUB_API_TOKEN="47283ad754f7828831045f5ad9f724439463665c"
 export ALTERNATE_EDITOR=""
+export NVM_DIR=~/.nvm
 
 source ~/.dotfiles/bash/paths
 source ~/.dotfiles/bash/functions
@@ -15,6 +16,9 @@ source ~/.dotfiles/bash/aliases
 
 # Completion
 source ~/.dotfiles/bash/completion/alias-completion.bash
+
+# Node Version Manager
+source $(brew --prefix nvm)/nvm.sh
 
 # Enable tab completion with sudo
 complete -cf sudo
