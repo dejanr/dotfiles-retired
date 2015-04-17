@@ -20,7 +20,6 @@
     "quotes": [2, "single", "avoid-escape"],
     "semi": [2, "never"],
     "space-after-keywords": [2, "always"],
-    "space-in-brackets": [2, "never"],
-    "space-unary-word-ops": 2
+    "space-in-brackets": [2, "never"]
   }
 }
