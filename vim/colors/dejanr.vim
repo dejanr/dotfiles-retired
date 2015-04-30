@@ -377,7 +377,7 @@ hi link twigVarDelim twigTagDelim
 hi link twigString String
 
 " JavaScript
-hi link javaScriptFuncKeyword Function
+hi link javaScriptFuncKeyword Statement
 hi link javaScriptFuncDef Operator
 hi link javaScriptFunction Statement
 hi link javaScriptValue Constant
@@ -385,6 +385,13 @@ hi link javaScriptOperator Operator
 hi link javaScriptRegexpString rubyRegexp
 hi link javaScriptEndColons Normal
 hi link javaScriptLabel Identifier
+hi link javascriptIdentifier Normal
+hi link javascriptBOMWindowProp Normal
+hi link javascriptFuncArg Normal
+hi link javascriptResponseProp Normal
+hi link javascriptXHRMethod Normal
+hi link javascriptCacheMethod Normal
+hi link javascriptDOMDocProp Normal
 
 " Tag list
 hi link TagListFileName Directory

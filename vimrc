@@ -40,7 +40,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['javascript'], 'passive_filetypes': ['html', 'less', 'yaml'] }
 
 " Javascript
-Bundle 'javascript.vim'
+Bundle 'othree/yajs.vim'
 Bundle 'JavaScript-Indent'
 Bundle 'JSON.vim'
 Bundle 'ParseJSON'
@@ -329,7 +329,7 @@ set synmaxcol=2048
 " let loaded_matchparen = 1
 
 " Show syntax highlighting groups for word under cursor
-nmap <C-S-C> :call SyntaxAttr()<CR>
+nmap <leader>g :call SyntaxAttr()<CR>
 
 " Rebuild ctaglist
 nmap <leader>cx :!ctags<CR>
