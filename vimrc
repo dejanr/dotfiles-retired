@@ -37,10 +37,11 @@ Bundle 'scrooloose/syntastic.git'
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['javascript'], 'passive_filetypes': ['html', 'scss', 'yaml'] }
+let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['javascript'], 'passive_filetypes': ['html', 'less', 'yaml'] }
 
 " Javascript
-Bundle 'JavaScript-syntax'
+Bundle 'javascript.vim'
+Bundle 'JavaScript-Indent'
 Bundle 'JSON.vim'
 Bundle 'ParseJSON'
 
@@ -115,6 +116,9 @@ Bundle 'sickill/vim-pasta'
 
 " HTML
 Bundle 'othree/html5.vim'
+
+" Less
+Bundle 'groenewege/vim-less'
 
 " Tmux navigator
 Bundle 'christoomey/vim-tmux-navigator'
