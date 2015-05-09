@@ -18,3 +18,4 @@ config/Trolltech.conf
 config/pulse
 stumpwm/storage
 gist-vim
+config/configstore/
