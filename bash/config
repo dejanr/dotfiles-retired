@@ -8,6 +8,11 @@ export ACK_PAGER_COLOR="less -R"
 export ALTERNATE_EDITOR=""
 export NVM_DIR=~/.nvm
 
+# boot 2 docker
+export DOCKER_TLS_VERIFY=1
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/dejanr/.boot2docker/certs/boot2docker-vm
+
 source ~/.dotfiles/bash/paths
 source ~/.dotfiles/bash/functions
 source ~/.dotfiles/bash/prompt
