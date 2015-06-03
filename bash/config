@@ -27,6 +27,11 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
   [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 fi
 
+# bash completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 # Enable tab completion with sudo
 complete -cf sudo
 
