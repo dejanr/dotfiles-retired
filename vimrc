@@ -4,50 +4,50 @@ filetype off                   " required!
 let mapleader = " "
 
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin('~/.vim/bundle')
 
-" Bundles {{{
+" Plugins {{{
 
 " General
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " Ack
-Bundle 'mileszs/ack.vim'
+Plugin 'mileszs/ack.vim'
 " let g:ackprg = 'ag --nogroup --nocolor --column'
 
-Bundle 'vim-scripts/IndexedSearch'
+Plugin 'vim-scripts/IndexedSearch'
 
 " Git
-Bundle 'tpope/vim-fugitive'
-Bundle 'gitv'
+Plugin 'tpope/vim-fugitive'
+Plugin 'gitv'
 nmap <leader>g :Gstatus<cr>
 
-Bundle 'tpope/vim-unimpaired'
-Bundle 'godlygeek/tabular'
-Bundle 'Raimondi/delimitMate'
-Bundle 'surround.vim'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'godlygeek/tabular'
+Plugin 'Raimondi/delimitMate'
+Plugin 'surround.vim'
 
 " Snipmate
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 " Syntastic
-Bundle 'scrooloose/syntastic.git'
+Plugin 'scrooloose/syntastic.git'
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['javascript'], 'passive_filetypes': ['html', 'less', 'yaml'] }
 
 " Javascript
-Bundle 'othree/yajs.vim'
-Bundle 'JavaScript-Indent'
-Bundle 'JSON.vim'
-Bundle 'ParseJSON'
+Plugin 'othree/yajs.vim'
+Plugin 'JavaScript-Indent'
+Plugin 'JSON.vim'
+Plugin 'ParseJSON'
 
 " Gist
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 
 let g:gist_detect_filetype = 1
 let g:gist_show_privates = 1
@@ -56,27 +56,27 @@ let g:gist_clip_command = 'pbcopy'
 let g:gist_browser_command = '/usr/bin/open -a "/Applications/Google Chrome.app" "%URL%"'
 
 " Vimux
-Bundle "vimux"
+Plugin 'vimux'
 
 " Syntax Attribute Checker
-Bundle 'SyntaxAttr.vim'
+Plugin 'SyntaxAttr.vim'
 
 " Better Status Line
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 " Markdown
-Bundle 'itspriddle/vim-marked'
+Plugin 'itspriddle/vim-marked'
 au BufRead *.md set ft=markdown
 au BufRead .stumpwmrc set ft=lisp
 
 " Bash
-Bundle 'bash-support.vim'
+Plugin 'bash-support.vim'
 
 " CtrlP
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 1
@@ -87,7 +87,7 @@ if executable('ag')
 endif
 
 " NERDTree
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeMinimalUI = 1
@@ -101,7 +101,7 @@ function! g:WorkaroundNERDTreeToggle()
 endfunction
 
 " Jade
-Bundle 'jade.vim'
+Plugin 'jade.vim'
 
 map <silent> <leader>d :bd<CR>
 map <silent> <leader>D :bd!<CR>
@@ -109,49 +109,59 @@ nnoremap [b :BB<CR>
 nnoremap ]b :BF<CR>
 
 " Go
-Bundle "jnwhiteh/vim-golang"
+Plugin 'jnwhiteh/vim-golang'
 
 " Better pasting
-Bundle 'sickill/vim-pasta'
+Plugin 'sickill/vim-pasta'
 
 " HTML
-Bundle 'othree/html5.vim'
+Plugin 'othree/html5.vim'
 
 " Less
-Bundle 'groenewege/vim-less'
+Plugin 'groenewege/vim-less'
 
 " Tmux navigator
-Bundle 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Draw tech graphs
-Bundle 'DrawIt'
+Plugin 'DrawIt'
 
 " For better cursor
-Bundle 'Vitality'
+Plugin 'Vitality'
 
 " Lisp
-Bundle 'kovisoft/slimv'
+Plugin 'kovisoft/slimv'
 
 " Clojure repl support
-Bundle "tpope/vim-fireplace"
+Plugin 'tpope/vim-fireplace'
 
 " Clojure runtime files
-Bundle "guns/vim-clojure-static"
+Plugin 'guns/vim-clojure-static'
 
 " Clojure Better rainbox Parentheses
-Bundle "kien/rainbow_parentheses.vim"
+Plugin 'kien/rainbow_parentheses.vim'
 
 " Clojure Better higlighting
-Bundle "guns/vim-clojure-highlight"
+Plugin 'guns/vim-clojure-highlight'
+
+" Rust
+Plugin 'rust-lang/rust.vim'
+
+" Rust racer autocompletion
+Plugin 'phildawes/racer'
+
+let g:racer_cmd = "<path-to-racer>/target/release/racer"
+let $RUST_SRC_PATH="<path-to-rust-srcdir>/src/"
 
 " }}}
+
+call vundle#end()
 
 " Global Stuff
 "-----------------------------------------------------------------------------
 
 " Set filetype stuff to on
-filetype indent plugin on
-
+filetype plugin indent on
 set ttyfast " Improves redrawing
 
 set tabstop=2
@@ -400,6 +410,7 @@ noremap <Leader>rm mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " Quickly ope a buffer for scripbble
 map <leader>oq :e ~/buffer<cr>
 au BufRead,BufNewFile ~/buffer iab <buffer> xh1 ===========================================
+au BufNewFile,BufRead *.rs set filetype=rust
 
 " CommandT
 let g:CommandTMaxHeight = 20
