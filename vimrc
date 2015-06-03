@@ -44,6 +44,7 @@ Plugin 'othree/yajs.vim'
 Plugin 'JavaScript-Indent'
 Plugin 'JSON.vim'
 Plugin 'ParseJSON'
+Plugin 'marijnh/tern_for_vim'
 
 " Gist
 Plugin 'mattn/webapi-vim'
@@ -151,7 +152,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'phildawes/racer'
 
 let g:racer_cmd = "<path-to-racer>/target/release/racer"
-let $RUST_SRC_PATH="<path-to-rust-srcdir>/src/"
+let $RUST_SRC_PATH="/Library/Caches/Homebrew/rust--git/src"
 
 " }}}
 
