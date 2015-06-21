@@ -40,11 +40,11 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['javascript'], 'passive_filetypes': ['html', 'less', 'yaml'] }
 
 " Javascript
-Plugin 'othree/yajs.vim'
-Plugin 'JavaScript-Indent'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+" Plugin 'JavaScript-Indent'
 Plugin 'JSON.vim'
 Plugin 'ParseJSON'
-Plugin 'marijnh/tern_for_vim'
 
 " Gist
 Plugin 'mattn/webapi-vim'
