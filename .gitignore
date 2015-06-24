@@ -22,3 +22,4 @@ config/configstore/
 config/.mono/
 config/count-to-6/
 config/workshopper/
+config/NuGet/NuGet.Config

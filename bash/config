@@ -20,6 +20,7 @@ source ~/.dotfiles/bash/aliases
 
 # Completion
 source ~/.dotfiles/bash/completion/alias-completion.bash
+source ~/.dotfiles/bash/completion/git-completion.bash
 
 # Node version manager
 if [ -s "$NVM_DIR/nvm.sh" ]; then
