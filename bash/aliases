@@ -27,6 +27,7 @@ alias c='clear'
 
 # git
 alias gd='git_diff'
+alias gp='git push'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gco='git checkout'
