@@ -37,3 +37,7 @@
 --ignore-dir=vendor
 --ignore-dir=coverage
 --ignore-dir=public
+--ignore-dir=build
+--ignore-dir=dist
+--ignore-dir=output
+--ignore-dir=app/jspm_packages
