@@ -80,3 +80,8 @@ gifify() {
         echo "proper usage: gif-ify <input_movie.mov> <output_file.gif>. You DO need to include extensions."
     fi
 }
+
+# download site and all assets associated with it
+wget-download-site() {
+  wget --mirror --convert-links --backup-converted --adjust-extension $1
+}
