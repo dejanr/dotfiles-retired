@@ -83,6 +83,12 @@ let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_working_path_mode = ''
 
+nmap <leader>b :CtrlPBuffer<CR>
+
+" Initialize ctrlp delete buffer from autoload (there is no bundle plugin yet)
+" Use C-@ to delete buffer
+call ctrlp_bdelete#init()
+
 if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif

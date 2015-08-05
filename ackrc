@@ -26,6 +26,7 @@
 
 # Ignore directories by default
 --ignore-dir=_compiled
+--ignore-dir=styleguide
 --ignore-dir=web/js/build
 --ignore-dir=web/css
 --ignore-dir=web/.sass-cache
@@ -41,3 +42,4 @@
 --ignore-dir=dist
 --ignore-dir=output
 --ignore-dir=app/jspm_packages
+--ignore-dir=.tmp
