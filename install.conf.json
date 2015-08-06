@@ -37,6 +37,14 @@
     },
     {
         "meta" : {
+            "title" : "ghc",
+        },
+        "link" : {
+            "~/.ghc" : "ghc"
+        }
+    },
+    {
+        "meta" : {
             "title" : "stumpwm"
         },
         "link" : {
