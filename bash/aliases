@@ -2,6 +2,7 @@
 alias ..='cd ..'
 
 alias vi='vim'
+alias dig='dig +short +noshort'
 
 # clipboard
 alias pbcopy='xclip -selection clipboard'
