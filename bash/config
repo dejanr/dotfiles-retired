@@ -48,9 +48,12 @@ if [ -s "/usr/local/bin/dnvm.sh" ]; then
 fi
 
 # bash completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
+if [ -x brew ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
+
+# nix env
+[ -f ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
 
 # Enable tab completion with sudo
 complete -cf sudo
