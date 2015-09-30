@@ -4,3 +4,6 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/csivanich/dotbot.git
+[submodule "nixpkgs"]
+	path = nixpkgs
+	url = https://github.com/NixOS/nixpkgs.git

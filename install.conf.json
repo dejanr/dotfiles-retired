@@ -82,6 +82,19 @@
         }
     },
     {
+      "meta": {
+        "title": "Nix Package manager"
+      },
+      "link": {
+        "~/.nixpkgs" : "nixpkgs"
+      },
+      "shell": [
+        ["mkdir -p ~/.nix-defexpr/nixpkgs", "Creating ~/.nix-defexpr/nixpkgs folder"],
+        ["rm -f ~/.nix-defexpr/channels", "Remove channels ~/.nix-defexpr/channels"],
+        ["ln -sf ~/.dotfiles/nixpkgs ~/.nix-defexpr/nixpkgs", "Linking cloned packages to the ~/.nix-defexpr/nixpkgs"]
+      ]
+    },
+    {
         "clean" : ["~"],
         "meta" : {
             "title" : "Clean symlinks which have moved"
