@@ -43,3 +43,4 @@
 --ignore-dir=output
 --ignore-dir=app/jspm_packages
 --ignore-dir=.tmp
+--ignore-dir=dist

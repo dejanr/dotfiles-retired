@@ -12,7 +12,7 @@ export NIX_PATH="nixpkgs=~/.dotfiles/nixpkgs"
 # boot 2 docker
 export DOCKER_TLS_VERIFY=1
 export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/dejanr/.boot2docker/certs/boot2docker-vm
+export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
 
 source ~/.dotfiles/bash/paths
 source ~/.dotfiles/bash/functions
@@ -48,6 +48,11 @@ if [ -s "/usr/local/bin/dnvm.sh" ]; then
   source dnvm.sh
 fi
 
+# nix
+if [ -s "~/.nix-profile/etc/profile.d/nix.sh" ]; then
+  source ~/.nix-profile/etc/profile.d/nix.sh
+fi
+
 # bash completion
 if [ -x brew ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
@@ -61,6 +66,9 @@ complete -cf sudo
 
 # NPM log level
 export npm_config_loglevel=warn
+
+# rbenv
+if [ which rbenv 2> /dev/null > /dev/null ]; then eval "$(rbenv init -)"; fi
 
 # Disable XOFF
 stty ixany

@@ -38,6 +38,7 @@ Plugin 'scrooloose/syntastic.git'
 let g:syntastic_check_on_open = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['javascript'], 'passive_filetypes': ['html', 'less', 'yaml'] }
+set synmaxcol=250
 
 " Javascript
 Plugin 'pangloss/vim-javascript'
@@ -362,7 +363,7 @@ let g:snippets_dir = '~/.vim/snippets'
 set wmh=0
 
 " Ignore this files when search files
-set wildignore+=.git/*,*/.git/*,*.DS_Store,*/node_modules/*
+set wildignore+=.git/*,*/.git/*,*.DS_Store,*/node_modules/*,*/dist/*
 set wildignore+=*/cache/*,*/.sass-cache/*
 set wildignore+=*/coverage/*,*/public/*,*-min.js,*-build.js
 
