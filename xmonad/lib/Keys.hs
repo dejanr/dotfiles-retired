@@ -88,14 +88,12 @@ myKeys =
 
     workspaces =
         [ ("1", "dashboard")
-        , ("n", "note")
         , ("c", "code")
         , ("w", "web")
         , ("m", "music")
         , ("v", "video")
         , ("p", "pdf")
         , ("f", "file")
-        , ("s", "speak")
         , ("d", "doc")
         ]
 
@@ -168,9 +166,7 @@ mediaKeys =
 
 -- Menus
 myApps =
-    [ ("Firefox",      raiseApp  "web" "firefox")
-    , ("GVim",         raiseApp' "gvim")
-    , ("LibreOffice",  raiseApp  "doc" "libreoffice")
+    [ ("Chrome",       raiseApp  "web" "chromium-browser")
     , ("Themes",       spawn     "lxappearance")
     ]
   where
