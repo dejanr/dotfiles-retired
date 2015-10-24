@@ -1,3 +1,11 @@
+link() {
+  from="$1"
+  to="$2"
+  echo "Linking '$from' to '$to'"
+  rm -f $to
+  ln -s "$from" "$to"
+}
+
 if [[ -d nixpkgs ]]; then
   cd nixpkgs
   git fetch
@@ -19,13 +27,10 @@ else
   git clone https://github.com/VundleVim/Vundle.vim.git vim/bundle/vundle
 fi
 
-link() {
-  from="$1"
-  to="$2"
-  echo "Linking '$from' to '$to'"
-  rm -f $to
-  ln -s "$from" "$to"
-}
+if [[ ! -d ~/.nix-defexpr ]]; then
+  mkdir -p ~/.nix-defexpr
+  link "$HOME/.dotfiles/nixpkgs" "$HOME/.nix-defexpr/nixpkgs"
+fi
 
 for location in $(find $HOME/.dotfiles -maxdepth 1 -name '*' ! -path '*.git'| sort); do
   name=$(basename $location)

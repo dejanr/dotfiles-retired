@@ -21,12 +21,12 @@
   fileSystems = [
     {
       mountPoint = "/";
-      device = "rpool/root/nixos"
+      device = "rpool/root/nixos";
       fsType = "zfs";
     }
     {
       mountPoint = "/boot";
-      device = "/dev/sda1"
+      device = "/dev/sda1";
       fsType = "ext3";
     }
   ];
