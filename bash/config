@@ -7,7 +7,7 @@ export GIT_EDITOR='vim'
 export ACK_PAGER_COLOR="less -R"
 export ALTERNATE_EDITOR=""
 export NVM_DIR=~/.nvm
-export NIX_PATH="nixpkgs=~/.dotfiles/nixpkgs"
+export NIX_PATH="nixpkgs=$HOME/.nixpkgs"
 
 # boot 2 docker
 export DOCKER_TLS_VERIFY=1
