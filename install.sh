@@ -10,8 +10,10 @@ if [[ -d nixpkgs ]]; then
   cd nixpkgs
   git fetch
   git remote update channels
-  git checkout 15.09
-  git rebase channels/nixos-15.09
+  git checkout master
+  git reset --hard origin/master
+  #git checkout 15.09
+  #git rebase channels/nixos-15.09
   cd ..
 else
   git clone https://github.com/NixOS/nixpkgs.git nixpkgs

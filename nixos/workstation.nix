@@ -10,7 +10,11 @@
   boot = {
     initrd.availableKernelModules = [ "xhci_pci" "ehci_pci" "ahci" "usbhid" "usb_storage" ];
     kernelModules = [ "kvm-intel" ];
+    blacklistedKernelModules = [ "snd_pcsp" ];
     extraModulePackages = [ ];
+    extraModprobeConfig = ''
+      options snd slots=snd-hda-intel
+    '';
 
     supportedFilesystems = [ "zfs" ];
     loader.grub.enable = true;
@@ -41,5 +45,9 @@
     xserver = {
       videoDrivers = [ "nvidia" ];
     };
+  };
+
+  hardware = {
+    pulseaudio.enable = true;
   };
 }

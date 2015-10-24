@@ -87,10 +87,6 @@
 
   users.extraGroups.docker.members = [ "dejanr" ];
 
-  hardware = {
-    pulseaudio.enable = true;
-  };
-
   services = {
     openssh = {
       enable = true;
@@ -146,5 +142,9 @@
 
     upower.enable = true;
     nixosManual.showManual = true;
+
+    # synchronize time using chrony
+    ntp.enable = false;
+    chrony.enable = true;
   };
 }
