@@ -47,9 +47,11 @@
     emacs
     file
     firefox
+    feh
     mutt
+    mplayer
     nodejs
-    vimHugeX
+    vim
     git
     gitFull
     gitAndTools.git-extras
@@ -70,6 +72,7 @@
     tmux
     linuxPackages.cpupower
     unzip
+    zathura
   ];
 
   users = {
@@ -98,7 +101,6 @@
     xserver = {
       enable = true;
       driSupport = true;
-
       useGlamor = true;
 
       displayManager = {
@@ -109,9 +111,6 @@
         desktopManagerHandlesLidAndPower = false;
 
         sessionCommands = ''
-          xrdb -merge ~/.Xdefaults;
-          xsetroot -solid dark;
-          xmodmap ~/.Xmodmap
           xsetroot -cursor_name left_ptr;
           xsetroot general;
         '';
