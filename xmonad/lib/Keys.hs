@@ -167,6 +167,7 @@ mediaKeys =
 -- Menus
 myApps =
     [ ("Chrome",       raiseApp  "web" "chromium-browser")
+    , ("Finder",       raiseApp  "file" "thunar")
     , ("Themes",       spawn     "lxappearance")
     ]
   where
