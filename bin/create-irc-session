@@ -1,0 +1,9 @@
+ tmux new-session -s irc -n editor -d
+ tmux send-keys weechat C-m
+ tmux select-window -t "irc":1
+
+if [ -z "$TMUX" ]; then
+  tmux attach -t irc
+else
+  tmux switch-client -t irc
+fi
