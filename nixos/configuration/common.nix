@@ -68,6 +68,7 @@
     ruby
     silver-searcher
     termite
+    gnome3.vte
     tree
     tmux
     linuxPackages.cpupower

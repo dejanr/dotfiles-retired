@@ -73,3 +73,7 @@ if [ which rbenv 2> /dev/null > /dev/null ]; then eval "$(rbenv init -)"; fi
 # Disable XOFF
 stty ixany
 stty ixoff -ixon
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell-colors/base16-brewer.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL 

@@ -310,7 +310,8 @@ set shortmess+=I
 set background=dark
 
 " Set color scheme to dejanr
-colorscheme dejanr
+let g:base16colorspace=256
+colorscheme base16-brewer
 
 " disable swapping
 set nobackup
