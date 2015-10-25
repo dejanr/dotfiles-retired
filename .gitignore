@@ -26,3 +26,6 @@ ghc/ghci_history
 config/chromium
 nixpkgs
 config/termite/config
+xmonad/xmonad.o
+xmonad/lib/*.o
+xmonad/xmonad-x86_64-linux

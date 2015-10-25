@@ -12,9 +12,8 @@ alias pbpaste='xclip -selection clipboard -o'
 alias less='less -R'
 alias more='more -R'
 
-# irssi
-alias irssi="TERM=screen-256color irssi";
-alias irc="if tmux has-session -t irssi; then tmux attach -t irssi; else tmux new -s irssi 'TERM=screen-256color irssi'; fi"
+# irc
+alias irc="if tmux has-session -t irc; then tmux attach -t irc; else create-irc-session; fi"
 
 # ls
 alias ls="ls $LS_OPTIONS -F"

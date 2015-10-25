@@ -311,7 +311,7 @@ set background=dark
 
 " Set color scheme to dejanr
 let g:base16colorspace=256
-colorscheme base16-brewer
+colorscheme base16-default
 
 " disable swapping
 set nobackup
