@@ -5,6 +5,7 @@
     [
       ./configuration/common.nix
       ./configuration/xmonad.nix
+      ./configuration/virtualization.nix
     ];
 
   boot = {

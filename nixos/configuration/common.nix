@@ -74,6 +74,7 @@
     linuxPackages.cpupower
     unzip
     zathura
+    xdg_utils
   ];
 
   users = {
@@ -90,6 +91,7 @@
   };
 
   users.extraGroups.docker.members = [ "dejanr" ];
+  users.extraGroups.vboxusers.members = [ "dejanr" ];
 
   services = {
     openssh = {
