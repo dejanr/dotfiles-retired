@@ -16,7 +16,7 @@ alias less='less -R'
 alias more='more -R'
 
 # irc
-alias irc="if tmux has-session -t irc; then tmux attach -t irc; else create-irc-session; fi"
+alias irc="export TERM=screen && if tmux has-session -t irc; then tmux attach -t irc; else create-irc-session; fi"
 
 # ls
 alias ls="ls $LS_OPTIONS -F"
