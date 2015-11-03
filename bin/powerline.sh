@@ -92,9 +92,9 @@ __powerline() {
         # Check the exit code of the previous command and display different
         # colors in the prompt accordingly.
         if [ $? -eq 0 ]; then
-            local BG_EXIT="$BG_GREEN"
+            local BG_EXIT="\n$BG_GREEN"
         else
-            local BG_EXIT="$BG_RED"
+            local BG_EXIT="\n$BG_RED"
         fi
 
         PS1="$BG_BASE1$FG_BASE3 \w $RESET"
