@@ -21,6 +21,14 @@ else
   git remote add channels https://github.com/NixOS/nixpkgs-channels.git
 fi
 
+if [[ -d nixos ]]; then
+  cd nixos
+  git pull --r
+  cd ..
+else
+  git clone git://github.com/dejanr/nixos.git nixos
+fi
+
 if [[ -d vim/bundle/vundle ]]; then
   cd vim/bundle/vundle
   git pull origin master
