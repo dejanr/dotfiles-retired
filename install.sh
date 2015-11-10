@@ -26,7 +26,7 @@ if [[ -d nixos ]]; then
   git pull --r
   cd ..
 else
-  git clone git://github.com/dejanr/nixos.git nixos
+  git clone git@github.com:dejanr/nixos.git nixos
 fi
 
 if [[ -d vim/bundle/vundle ]]; then
