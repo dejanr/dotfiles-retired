@@ -237,6 +237,8 @@ syntax on
 
 " Hide the mouse pointer while typing
 set mousehide
+" Set mouse click are to be more compatible and wider on unsupported screens
+set ttymouse=sgr
 
 " Set up the gui cursor to look nice
 set guicursor=n-v-c:block-Cursor-blinkon0
