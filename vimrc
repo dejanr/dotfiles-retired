@@ -238,7 +238,6 @@ syntax on
 " Hide the mouse pointer while typing
 set mousehide
 " Set mouse click are to be more compatible and wider on unsupported screens
-set ttymouse=sgr
 
 " Set up the gui cursor to look nice
 set guicursor=n-v-c:block-Cursor-blinkon0
@@ -463,11 +462,7 @@ nmap <leader>s :w<CR>
 if has('mouse')
   set mouse=a
   set mousehide
-  if &term =~ "xterm" || &term =~ "screen"
-    autocmd VimEnter * set ttymouse=xterm2
-    autocmd FocusGained * set ttymouse=xterm2
-    autocmd BufEnter * set ttymouse=xterm2
-  endif
+  set ttymouse=sgr
 endif
 
 " dont map stupid s
