@@ -8,11 +8,8 @@ export ACK_PAGER_COLOR="less -R"
 export ALTERNATE_EDITOR=""
 export NVM_DIR=~/.nvm
 export NIX_PATH=nixpkgs=$HOME/.dotfiles/nixpkgs
-
-# boot 2 docker
-export DOCKER_TLS_VERIFY=1
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
+export GOPATH=~/Projects
+export PATH=$PATH:$GOPATH/bin
 
 source ~/.dotfiles/bash/paths
 source ~/.dotfiles/bash/functions
@@ -36,6 +33,12 @@ type __git_complete >/dev/null 2>&1 && {
     __git_complete   gb       _git_branch
     __git_complete   gs       _git_status
 }
+
+# osx docker machine
+if test -d ~/.docker/machine/machines/xhyve 
+then
+  eval "$(docker-machine env xhyve)"
+fi
 
 # Node version manager
 if [ -s "$NVM_DIR/nvm.sh" ]; then
