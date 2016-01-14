@@ -23,7 +23,7 @@ fi
 
 if [[ -d nixos ]]; then
   cd nixos
-  git pull --r
+  git pull
   cd ..
 else
   git clone git@github.com:dejanr/nixos.git nixos
@@ -35,6 +35,14 @@ if [[ -d vim/bundle/vundle ]]; then
   cd ../../../
 else
   git clone https://github.com/VundleVim/Vundle.vim.git vim/bundle/vundle
+fi
+
+if [[ -d emacs.d ]]; then
+  cd emacs.d
+  git pull
+  cd ..
+else
+  git clone https://github.com/syl20bnr/spacemacs emacs.d
 fi
 
 if [[ ! -d ~/.nix-defexpr ]]; then
