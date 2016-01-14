@@ -40,6 +40,8 @@ then
   eval "$(docker-machine env xhyve)"
 fi
 
+eval "$(docker-machine env virtualbox)"
+
 # Node version manager
 if [ -s "$NVM_DIR/nvm.sh" ]; then
   source ~/.nvm/nvm.sh

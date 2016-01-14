@@ -1,4 +1,4 @@
-export PATH="~/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="~/.nix-profile/bin:~/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="node_modules/.bin:$PATH"
 
 if which rbenv 2> /dev/null > /dev/null; then
