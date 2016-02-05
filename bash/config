@@ -53,15 +53,8 @@ if [ -s "/usr/local/bin/dnvm.sh" ]; then
   source dnvm.sh
 fi
 
-# nix
-if [ -s "~/.nix-profile/etc/profile.d/nix.sh" ]; then
-  source ~/.nix-profile/etc/profile.d/nix.sh
-fi
-
 # bash completion
-if [ -x brew ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+[[ -r $(brew --prefix)/etc/bash_completion ]] && . $(brew --prefix)/etc/bash_completion
 
 # nix env
 [ -f ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
