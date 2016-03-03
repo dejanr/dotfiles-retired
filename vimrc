@@ -462,7 +462,10 @@ nmap <leader>s :w<CR>
 if has('mouse')
   set mouse=a
   set mousehide
-  set ttymouse=sgr
+
+  if has('mouse_sgr')
+    set ttymouse=sgr
+  endif
 endif
 
 " dont map stupid s
