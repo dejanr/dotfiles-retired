@@ -117,6 +117,9 @@ map <silent> <leader>D :bd!<CR>
 nnoremap [b :BB<CR>
 nnoremap ]b :BF<CR>
 
+" Elm
+Plugin 'elm.vim'
+
 " Go
 Plugin 'jnwhiteh/vim-golang'
 

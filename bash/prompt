@@ -1,2 +1,4 @@
 # Promt config
-source ~/.dotfiles/bin/powerline.sh
+
+export PS1="\w\[\033[0;32m\] \$(/usr/local/bin/gitHUD)\[\033[0m\] 
+λ "
