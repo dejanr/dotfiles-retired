@@ -30,4 +30,3 @@ xmonad/xmonad.o
 xmonad/lib/*.o
 xmonad/xmonad-x86_64-linux
 nixos
-emacs.d
