@@ -1,6 +1,4 @@
-export PATH="~/.nix-profile/bin:~/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
-export PATH="node_modules/.bin:$PATH"
+export NIX_PATH=nixpkgs=$HOME/.dotfiles/nixpkgs
+export GOPATH=~/Projects
 
-if which rbenv 2> /dev/null > /dev/null; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-fi
+export PATH="node_modules/.bin:~/.bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH"

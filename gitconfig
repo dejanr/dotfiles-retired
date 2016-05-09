@@ -52,3 +52,5 @@
   #oldHighlight = "#ffaaaa"
   #newNormal = "white"
   #newHighlight = "#aaffaa"
+[merge]
+  tool = opendiff
