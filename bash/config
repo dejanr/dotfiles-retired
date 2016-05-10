@@ -8,28 +8,20 @@ export ACK_PAGER_COLOR="less -R"
 export ALTERNATE_EDITOR=""
 export NVM_DIR=~/.nvm
 
-source ~/.dotfiles/bash/paths
-source ~/.dotfiles/bash/functions
-source ~/.dotfiles/bash/prompt
-source ~/.dotfiles/bash/aliases
+# don't put duplicate lines in the history. See bash(1) for more options
+# ... or force ignoredups and ignorespace
+HISTCONTROL=ignoredups:ignorespace
 
-# Completion
-source ~/.dotfiles/bash/completion/alias-completion.bash
-source ~/.dotfiles/bash/completion/git-completion.bash
+# append to the history file, don't overwrite it
+shopt -s histappend
 
-complete -o default -o nospace -F _git gco
-complete -o default -o nospace -F _git gb
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
 
-# Git Aliases AutoComplete
-type __git_complete >/dev/null 2>&1 && {
-    __git_complete   gc       _git_commit
-    __git_complete   gc!      _git_commit
-    __git_complete   gca      _git_commit
-    __git_complete   gca!     _git_commit
-    __git_complete   gco      _git_checkout
-    __git_complete   gb       _git_branch
-    __git_complete   gs       _git_status
-}
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 # osx docker machine
 if test -d ~/.docker/machine/machines/xhyve 
@@ -55,6 +47,29 @@ fi
 
 # nix env
 [ -f ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
+
+source ~/.dotfiles/bash/paths
+source ~/.dotfiles/bash/functions
+source ~/.dotfiles/bash/prompt
+source ~/.dotfiles/bash/aliases
+
+# Completion
+source ~/.dotfiles/bash/completion/alias-completion.bash
+source ~/.dotfiles/bash/completion/git-completion.bash
+
+complete -o default -o nospace -F _git gco
+complete -o default -o nospace -F _git gb
+
+# Git Aliases AutoComplete
+type __git_complete >/dev/null 2>&1 && {
+    __git_complete   gc       _git_commit
+    __git_complete   gc!      _git_commit
+    __git_complete   gca      _git_commit
+    __git_complete   gca!     _git_commit
+    __git_complete   gco      _git_checkout
+    __git_complete   gb       _git_branch
+    __git_complete   gs       _git_status
+}
 
 # Enable tab completion with sudo
 complete -cf sudo
