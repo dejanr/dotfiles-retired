@@ -19,9 +19,8 @@ alias more='more -R'
 alias irc="export TERM=screen && if tmux has-session -t irc; then tmux attach -t irc; else create-irc-session; fi"
 
 # ls
-alias ls="ls $LS_OPTIONS -F"
-alias l="ls $LS_OPTIONS -lAh"
-alias ll="ls $LS_OPTIONS -l"
+alias l="ls $LS_OPTIONS -CF"
+alias ll="ls $LS_OPTIONS -alF"
 alias la="ls $LS_OPTIONS -A"
 
 alias du='du -hc'
