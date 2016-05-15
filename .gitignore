@@ -13,9 +13,6 @@ ssh/environment-*
 ssh/id_rsa
 ssh/id_rsa.pub
 config/gtk-2.0
-config/Trolltech.conf
-config/pulse
-stumpwm/storage
 gist-vim
 config/configstore/
 config/.mono/
@@ -23,14 +20,3 @@ config/count-to-6/
 config/workshopper/
 config/NuGet/NuGet.Config
 ghc/ghci_history
-config/chromium
-nixpkgs
-config/termite/config
-xmonad/xmonad.o
-xmonad/lib/*.o
-xmonad/xmonad-x86_64-linux
-nixos
-config/Thunar/accels.scm
-config/Thunar/uca.xml
-config/menus/
-config/mimeapps.list
