@@ -32,3 +32,6 @@ xmonad/xmonad-x86_64-linux
 nixos
 config/menus/
 config/mimeapps.list
+config/gtk-3.0/bookmarks
+config/oxygen-gtk/
+config/xfce4/
