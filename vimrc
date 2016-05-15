@@ -474,7 +474,7 @@ endif
 " dont map stupid s
 nnoremap s <nop>
 
-set guifont=DejaVu\ Sans\ Mono:h13
+set guifont=PragmataPro:h13
 let g:Powerline_symbols='fancy'
 
 " Shortcut for file explorer
