@@ -3,8 +3,8 @@
 
 include "/home/dejanr/.gtkrc-2.0.mine"
 gtk-theme-name="Arc-Darker"
-gtk-icon-theme-name="gnome"
-gtk-font-name="System San Francisco Display 12"
+gtk-icon-theme-name="DMZ-White"
+gtk-font-name="PragmataPro 12"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
 gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
