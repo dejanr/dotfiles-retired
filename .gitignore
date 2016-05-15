@@ -30,3 +30,7 @@ xmonad/xmonad.o
 xmonad/lib/*.o
 xmonad/xmonad-x86_64-linux
 nixos
+config/Thunar/accels.scm
+config/Thunar/uca.xml
+config/menus/
+config/mimeapps.list
