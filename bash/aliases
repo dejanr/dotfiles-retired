@@ -4,7 +4,10 @@ alias sudo='sudo '
 # cd
 alias ..='cd ..'
 
-alias vi='vim'
+alias vi='emacsclient -t'
+alias vim='emacsclient -t'
+alias e='emacsclient -t'
+alias em='emacsclient -t'
 alias dig='dig +short +noshort'
 
 # clipboard

@@ -18,6 +18,7 @@
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
   excludesfile = ~/.gitignore
 	quotepath = off
+	editor = emacsclient
 [diff]
   renamelimit = 0
   algorithm = patience
