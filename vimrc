@@ -156,15 +156,6 @@ Plugin 'kien/rainbow_parentheses.vim'
 " Clojure Better higlighting
 Plugin 'guns/vim-clojure-highlight'
 
-" Rust
-Plugin 'rust-lang/rust.vim'
-
-" Rust racer autocompletion
-Plugin 'phildawes/racer'
-
-let g:racer_cmd = "<path-to-racer>/target/release/racer"
-let $RUST_SRC_PATH="/Library/Caches/Homebrew/rust--git/src"
-
 " }}}
 
 call vundle#end()
