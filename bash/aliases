@@ -47,6 +47,7 @@ alias wgets='wget --referer="http://www.google.com" --user-agent="Mozilla/5.0 (W
 
 # nixos
 alias nix-shell="nix-shell -I nixpkgs=/etc/nixos/nixpkgs "
+alias nix-build="nix-build -I nixpkgs=/etc/nixos/nixpkgs "
 alias nix-repl="nix-repl -I nixpkgs=/etc/nixos/nixpkgs "
 alias nix-search="nix-env -I nixpkgs=/etc/nixos/nixpkgs -f '<nixpkgs>' -qaP "
 alias nix-install="nix-env -I nixpkgs=/etc/nixos/nixpkgs -f '<nixpkgs>' -iA "
