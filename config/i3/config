@@ -33,13 +33,13 @@
   set $monitor2 "HDMI-0"
 
 # General Configuration
-  font pango:System San Francisco Display 10
+  font pango:PragmataPro 12
   floating_modifier $mod
   hide_edge_borders both
   new_window none
 
 # Window-Related Bindings
-  bindsym $mod+Shift+q kill
+  bindsym $mod+q kill
   bindsym $mod+h focus left
   bindsym $mod+j focus down
   bindsym $mod+k focus up
@@ -50,8 +50,6 @@
   bindsym $mod+Shift+l move right
   bindsym $mod+Shift+space floating toggle
   bindsym $mod+f fullscreen toggle
-  bindsym $mod+v layout toggle split
-  #bindsym $mod+h split h
   bindsym $mod+space focus mode_toggle
   bindsym $mod+r mode "  "
   mode "  " {
@@ -132,13 +130,14 @@ client.unfocused $base01 $base01 $base03 $base01
 client.urgent $base02 $base08 $base07 $base08
 
 # Bar
-  bar {
+bar {
     font pango: PragmataPro, FontAwesome 11
     status_command i3blocks
-    position bottom
+    position top
     strip_workspace_numbers no
     bindsym button4 nop
     bindsym button5 nop
+
     colors {
         separator $base03
         background $base01
@@ -150,4 +149,14 @@ client.urgent $base02 $base08 $base07 $base08
         urgent_workspace   $base08 $base08    $base07
 
     }
-  }
+}
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# split in horizontal orientation
+bindsym $mod+Shift+v split h
+
+# Startup stuff
+exec --no-startup-id dunst
+exec --no-startup-id exec compton --config ~/.config/compton.conf -b
