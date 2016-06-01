@@ -25,7 +25,6 @@ URxvt*color0:                         #181818
 URxvt*color1:                         #ab4642
 URxvt*color2:                         #a1b56c
 URxvt*color3:                         #f7ca88
-URxvt*color3:                         #7cafc2
 URxvt*color5:                         #ba8baf
 URxvt*color6:                         #86c1b9
 URxvt*color7:                         #d8d8d8
@@ -59,6 +58,32 @@ URxvt.keysym.F11:          perl:fullscreen:switch
 URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger:  C-Up
 
-URxvt.url-launcher:        /usr/bin/chromium
+URxvt.url-launcher:        /run/current-system/sw/bin/chromium
 URxvt.keysym.M-Delete:     perl:matcher:list
 URxvt.colorUL:             #7780a1
+
+rofi.modi:                           window,run,ssh
+rofi.opacity:                        80
+rofi.width:                          30
+rofi.lines:                          5
+rofi.columns:                        2
+rofi.font:                           PragmataPro 13
+rofi.color-normal:                   #d8d8d8,#002b36,#d8d8d8,#586e75,#d8d8d8
+rofi.color-urgent:                   #d8d8d8,#ab4642,#d8d8d8,#ab4642,#d8d8d8
+rofi.color-active:                   #d8d8d8,#268bd2,#d8d8d8,#268bd2,#d8d8d8
+rofi.color-window:                   #d8d8d8,#002b36
+rofi.bw:                             1
+rofi.padding:                        20
+rofi.yoffset:                        0
+rofi.xoffset:                        0
+rofi.fixed-num-lines:                true
+rofi.terminal:                       termite
+rofi.ssh-client:                     mosh
+rofi.ssh-command:                    {terminal} -e {ssh-client} {host}
+rofi.sidebar-mode:                   true
+rofi.eh:                             2
+rofi.parse-hosts:                    true
+rofi.parse-known-hosts:              true
+rofi.separator-style:                solid
+rofi.hide-scrollbar:                 true
+rofi.threads:                        2
