@@ -19,10 +19,10 @@
   set $base0F #a16946
 
   set $workspace1 "1: "
-  set $workspace2 "2: "
-  set $workspace3 "3: "
-  set $workspace4 "4: "
-  set $workspace5 "5: "
+  set $workspace2 "2: "
+  set $workspace3 "3: "
+  set $workspace4 "4: "
+  set $workspace5 "5: "
   set $workspace6 "6: "
   set $workspace7 "7: "
   set $workspace8 "8: "
@@ -115,6 +115,8 @@
 
 # Program Workspaces
   assign [class="Firefox"] $workspace1
+  assign [class="Pidgin"] $workspace9
+  assign [class="Skype"] $workspace9
   assign [class="Spotify"] $workspace10
 
 # Floating
@@ -159,4 +161,8 @@ bindsym $mod+Shift+v split h
 
 # Startup stuff
 exec --no-startup-id dunst
-exec --no-startup-id exec compton --config ~/.config/compton.conf -b
+exec --no-startup-id exec compton --config ~/.compton.conf -b
+exec --no-startup-id skype
+exec --no-startup-id pidgin
+exec --no-startup-id firefox
+exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*

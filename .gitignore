@@ -31,3 +31,7 @@ config/pulse/
 emacs.d/ido.last
 emacs.d/projectile-bookmarks.eld
 emacs.d/.chicken-scheme-symbols-dump.el
+config/Skype/Skype.conf
+config/dconf/
+config/gconf
+config/vlc/
