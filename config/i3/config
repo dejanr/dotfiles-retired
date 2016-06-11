@@ -148,7 +148,7 @@ bar {
         focused_workspace  $base0C $base0D    $base00
         active_workspace   $base02 $base02    $base07
         inactive_workspace $base01 $base01    $base03
-        urgent_workspace   $base08 $base08    $base07
+       urgent_workspace   $base08 $base08    $base07
 
     }
 }
@@ -162,7 +162,4 @@ bindsym $mod+Shift+v split h
 # Startup stuff
 exec --no-startup-id dunst
 exec --no-startup-id exec compton --config ~/.compton.conf -b
-exec --no-startup-id skype
-exec --no-startup-id pidgin
-exec --no-startup-id firefox
 exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
