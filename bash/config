@@ -2,9 +2,9 @@ export TERM=xterm-256color
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LANG=en_US.UTF-8
-export EDITOR="emacsclient -t"
-export GIT_EDITOR="emacsclient -t"
-export VISUAL="emacsclient -t"
+export EDITOR="vim"
+export GIT_EDITOR="vim"
+export VISUAL="vim"
 export ACK_PAGER_COLOR="less -R"
 export ALTERNATE_EDITOR=""
 export NVM_DIR=~/.nvm
@@ -25,14 +25,6 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# osx docker machine
-if test -d ~/.docker/machine/machines/xhyve 
-then
-  eval "$(docker-machine env xhyve)"
-fi
-
-eval "$(docker-machine env virtualbox)"
 
 # Node version manager
 if [ -s "$NVM_DIR/nvm.sh" ]; then
