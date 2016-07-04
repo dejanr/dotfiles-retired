@@ -156,6 +156,9 @@ Plugin 'kien/rainbow_parentheses.vim'
 " Clojure Better higlighting
 Plugin 'guns/vim-clojure-highlight'
 
+" GraphQL
+Plugin 'jparise/vim-graphql'
+
 " }}}
 
 call vundle#end()
