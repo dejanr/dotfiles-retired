@@ -3,38 +3,37 @@ filetype off                   " required!
 
 let mapleader = " "
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#begin('~/.vim/bundle')
+call plug#begin('~/.vim/plugged')
 
-" Plugins {{{
+" Plugs {{{
 
 " General
-Plugin 'gmarik/vundle'
+Plug 'gmarik/vundle'
 
 " Ack
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
-Plugin 'vim-scripts/IndexedSearch'
+Plug 'vim-scripts/IndexedSearch'
 
 " Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'gitv'
+Plug 'tpope/vim-fugitive'
+Plug 'gitv'
 nmap <leader>g :Gstatus<cr>
 
-Plugin 'tpope/vim-unimpaired'
-Plugin 'godlygeek/tabular'
-Plugin 'Raimondi/delimitMate'
-Plugin 'surround.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'godlygeek/tabular'
+Plug 'Raimondi/delimitMate'
+Plug 'surround.vim'
 
 " Snipmate
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 
 " Syntastic
-Plugin 'scrooloose/syntastic.git'
+Plug 'scrooloose/syntastic'
 
 let g:syntastic_check_on_open = 1
 let g:syntastic_javascript_checkers = ['eslint']
@@ -42,15 +41,15 @@ let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['javascript'
 set synmaxcol=250
 
 " Javascript
-Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
-" Plugin 'JavaScript-Indent'
-Plugin 'JSON.vim'
-Plugin 'ParseJSON'
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+" Plug 'JavaScript-Indent'
+Plug 'JSON.vim'
+Plug 'ParseJSON'
 
 " Gist
-Plugin 'mattn/webapi-vim'
-Plugin 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
 
 let g:gist_detect_filetype = 1
 let g:gist_show_privates = 1
@@ -59,27 +58,27 @@ let g:gist_clip_command = 'pbcopy'
 let g:gist_browser_command = '/usr/bin/open -a "/Applications/Google Chrome.app" "%URL%"'
 
 " Vimux
-Plugin 'vimux'
+Plug 'vimux'
 
 " Syntax Attribute Checker
-Plugin 'SyntaxAttr.vim'
+Plug 'SyntaxAttr.vim'
 
 " Better Status Line
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 " Markdown
-Plugin 'itspriddle/vim-marked'
+Plug 'itspriddle/vim-marked'
 au BufRead *.md set ft=markdown
 au BufRead .stumpwmrc set ft=lisp
 
 " Bash
-Plugin 'bash-support.vim'
+Plug 'bash-support.vim'
 
 " CtrlP
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 
 let g:ctrlp_use_caching = 1
 let g:ctrlp_clear_cache_on_exit = 1
@@ -96,7 +95,7 @@ if executable('ag')
 endif
 
 " NERDTree
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeMinimalUI = 1
@@ -110,7 +109,7 @@ function! g:WorkaroundNERDTreeToggle()
 endfunction
 
 " Jade
-Plugin 'jade.vim'
+Plug 'jade.vim'
 
 map <silent> <leader>d :bd<CR>
 map <silent> <leader>D :bd!<CR>
@@ -118,50 +117,50 @@ nnoremap [b :BB<CR>
 nnoremap ]b :BF<CR>
 
 " Elm
-Plugin 'elm.vim'
+Plug 'elm.vim'
 
 " Go
-Plugin 'jnwhiteh/vim-golang'
+Plug 'jnwhiteh/vim-golang'
 
 " Better pasting
-Plugin 'sickill/vim-pasta'
+Plug 'sickill/vim-pasta'
 
 " HTML
-Plugin 'othree/html5.vim'
+Plug 'othree/html5.vim'
 
 " Less
-Plugin 'groenewege/vim-less'
+Plug 'groenewege/vim-less'
 
 " Tmux navigator
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Draw tech graphs
-Plugin 'DrawIt'
+Plug 'DrawIt'
 
 " For better cursor
-Plugin 'Vitality'
+Plug 'Vitality'
 
 " Lisp
-Plugin 'kovisoft/slimv'
+Plug 'kovisoft/slimv'
 
 " Clojure repl support
-Plugin 'tpope/vim-fireplace'
+Plug 'tpope/vim-fireplace'
 
 " Clojure runtime files
-Plugin 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-static'
 
 " Clojure Better rainbox Parentheses
-Plugin 'kien/rainbow_parentheses.vim'
+Plug 'kien/rainbow_parentheses.vim'
 
 " Clojure Better higlighting
-Plugin 'guns/vim-clojure-highlight'
+Plug 'guns/vim-clojure-highlight'
 
 " GraphQL
-Plugin 'jparise/vim-graphql'
+Plug 'jparise/vim-graphql'
 
 " }}}
 
-call vundle#end()
+call plug#end()
 
 " Global Stuff
 "-----------------------------------------------------------------------------

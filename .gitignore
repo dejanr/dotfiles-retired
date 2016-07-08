@@ -35,3 +35,4 @@ config/Skype/Skype.conf
 config/dconf/
 config/gconf
 config/vlc/
+vim/plugged/

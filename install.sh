@@ -7,11 +7,7 @@ link() {
 }
 
 if [[ -d vim/bundle/vundle ]]; then
-  cd vim/bundle/vundle
-  git pull origin master
-  cd ../../../
-else
-  git clone https://github.com/VundleVim/Vundle.vim.git vim/bundle/vundle
+  curl -fLo vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim
 fi
 
 if [[ ! -d ~/.nix-defexpr ]]; then
