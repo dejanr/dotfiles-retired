@@ -43,6 +43,11 @@ set synmaxcol=250
 " Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
+Plug 'mxw/vim-jsx'
+
+" Dont require jsx file extension for enabling this plugin
+let g:jsx_ext_required = 0
+
 " Plug 'JavaScript-Indent'
 Plug 'JSON.vim'
 Plug 'ParseJSON'
