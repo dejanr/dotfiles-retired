@@ -85,3 +85,7 @@ gifify() {
 wget-download-site() {
   wget --mirror --convert-links --backup-converted --adjust-extension $1
 }
+
+cd () {
+  builtin cd $@ && ls -CF
+}
