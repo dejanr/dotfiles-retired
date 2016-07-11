@@ -70,9 +70,7 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 " Markdown
-Plug 'itspriddle/vim-marked'
-au BufRead *.md set ft=markdown
-au BufRead .stumpwmrc set ft=lisp
+Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 
 " Bash
 Plug 'bash-support.vim'
@@ -230,6 +228,9 @@ set showmode
 
 " Switch on syntax highlighting.
 syntax on
+
+" Disable syntax for some files
+autocmd! bufreadpost *.min.js set syntax=off
 
 " Hide the mouse pointer while typing
 set mousehide
