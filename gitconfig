@@ -19,6 +19,7 @@
   excludesfile = ~/.gitignore
 	quotepath = off
 	editor = emacsclient
+	pager = diff-so-fancy | less
 [diff]
   renamelimit = 0
   algorithm = patience
@@ -43,9 +44,9 @@
   # treeish like history
   hist = log --no-merges --pretty=format:\"%h %ad | [%an] %s%d\" --graph --date=short
 [pager]
-  log = diff-highlight | less
-  show = diff-highlight | less
-  diff = diff-highlight | less
+  log = diff-so-fancy | less
+  show = diff-so-fancy | less
+  diff = diff-so-fancy | less
 [color "diff-highlight"]
   #oldHighlight = ul
   #oldReset = noul
@@ -55,3 +56,8 @@
   #newHighlight = "#aaffaa"
 [merge]
   tool = opendiff
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
