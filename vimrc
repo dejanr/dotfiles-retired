@@ -198,7 +198,7 @@ set smartcase
 
 " set the forward slash to be the slash of note.  Backslashes suck
 set shellslash
-set shell=/bin/bash
+set shell=bash
 
 " Make command line one lines high
 set ch=1

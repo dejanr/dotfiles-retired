@@ -22,7 +22,7 @@
   set $workspace2 "2: "
   set $workspace3 "3: "
   set $workspace4 "4: "
-  set $workspace5 "5: "
+  set $workspace5 "5: "
   set $workspace6 "6: "
   set $workspace7 "7: "
   set $workspace8 "8: "
@@ -37,6 +37,11 @@
   floating_modifier $mod
   hide_edge_borders both
   new_window none
+
+# change container layout (stacked, tabbed, default)
+  bindsym $mod+Shift+i layout stacking
+  bindsym $mod+Shift+u layout tabbed
+  bindsym $mod+Shift+y layout default
 
 # Window-Related Bindings
   bindsym $mod+q kill
@@ -118,11 +123,14 @@
   assign [class="Pidgin"] $workspace9
   assign [class="Skype"] $workspace9
   assign [class="Spotify"] $workspace10
+  assign [class="Pronterface.py"] $workspace5
+  assign [class=".slic3r.pl-wrapped"] $workspace5
 
 # Floating
   for_window [class="Lxappearance"] floating enable
   for_window [class="Seahorse"] floating enable
   for_window [class="Pavucontrol"] floating enable
+  for_window [class="Qalculate-gtk"] floating enable
 
 # Widow Colours
 #                         border  background text    indicator
