@@ -36,3 +36,4 @@ config/dconf/
 config/gconf
 config/vlc/
 vim/plugged/
+weechat/script/plugins.xml.gz
