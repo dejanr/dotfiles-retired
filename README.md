@@ -11,6 +11,6 @@ So with this two repositories i have fully deterministic and reproducible os env
     ./install.sh
 ```
 
-## Vim bundles
+## Vim
 
 To manage vim dependencies Use :PlugInstall inside vim.
