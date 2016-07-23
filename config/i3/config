@@ -129,10 +129,8 @@ bindsym $mod+Shift+0 move container to workspace $workspace10; workspace $worksp
 
 # Program Workspaces
 assign [class="Firefox"] $workspace1
-assign [class="Pidgin"] $workspace9
-assign [class="Skype"] $workspace9
-assign [class="Spotify"] $workspace10
 assign [class="Pronterface.py"] $workspace5
+assign [class="Cura"] $workspace5
 assign [class=".slic3r.pl-wrapped"] $workspace5
 
 # fix graphics glitch
@@ -159,6 +157,9 @@ for_window [class="Pidgin"] move window to position 1500 50
 for_window [class="Thunar"] floating enable
 for_window [class="Thunar"] resize set 650 400
 for_window [class="Thunar"] move window to position 600 200
+for_window [class="Thunderbird"] floating enable
+for_window [class="Thunderbird"] resize set 920 1060
+for_window [class="Thunderbird"] move window to position 1000 20
 
 # Widow Colours
 #                         border  background text    indicator
@@ -203,5 +204,7 @@ exec --no-startup-id pidgin
 
 # applications
 bindsym $mod+n exec Thunar
+bindsym $mod+p exec pidgin
+bindsym $mod+m exec thunderbird
 bindsym $mod+Shift+n exec --no-startup-id termite -t nm_tui_win -e "nmtui"
 bindsym $mod+b exec --no-startup-id qutebrowser
