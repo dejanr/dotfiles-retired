@@ -37,3 +37,9 @@ config/gconf
 config/vlc/
 vim/plugged/
 weechat/script/plugins.xml.gz
+config/Trolltech.conf
+config/VCG/
+config/enchant/
+config/libreofficedev/
+config/transmission/dht.dat
+config/transmission/stats.json
