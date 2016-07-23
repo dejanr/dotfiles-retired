@@ -194,5 +194,6 @@ exec --no-startup-id dunst
 exec --no-startup-id exec compton --config ~/.compton.conf -b
 exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
 exec --no-startup-id thunderbird
+exec --no-startup-id pidgin
 bindsym $mod+n exec --no-startup-id termite -t nm_tui_win -e "nmtui"
 bindsym $mod+b exec --no-startup-id qutebrowser
