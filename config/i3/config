@@ -154,9 +154,11 @@ for_window [class="Xpdf"] floating enable
 for_window [class="Xpdf"] resize set 700 900
 for_window [class="Xpdf"] move window to position 1100 100
 for_window [class="Pidgin"] floating enable
-for_window [class="Pidgin"] fullscreen disable
 for_window [class="Pidgin"] resize set 400 600
 for_window [class="Pidgin"] move window to position 1500 50
+for_window [class="Thunar"] floating enable
+for_window [class="Thunar"] resize set 650 400
+for_window [class="Thunar"] move window to position 600 200
 
 # Widow Colours
 #                         border  background text    indicator
@@ -175,15 +177,14 @@ bar {
   bindsym button5 nop
 
   colors {
-      separator $base03
-      background $base01
-      statusline $base05
-      #                  border  background text
-      focused_workspace  $base0C $base0D    $base00
-      active_workspace   $base02 $base02    $base07
-      inactive_workspace $base01 $base01    $base03
-     urgent_workspace   $base08 $base08    $base07
-
+    separator $base03
+    background $base01
+    statusline $base05
+    #                  border  background text
+    focused_workspace  $base0C $base0D    $base00
+    active_workspace   $base02 $base02    $base07
+    inactive_workspace $base01 $base01    $base03
+    urgent_workspace   $base08 $base08    $base07
   }
 }
 
@@ -199,5 +200,8 @@ exec --no-startup-id exec compton --config ~/.compton.conf -b
 exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
 exec --no-startup-id thunderbird
 exec --no-startup-id pidgin
-bindsym $mod+n exec --no-startup-id termite -t nm_tui_win -e "nmtui"
+
+# applications
+bindsym $mod+n exec Thunar
+bindsym $mod+Shift+n exec --no-startup-id termite -t nm_tui_win -e "nmtui"
 bindsym $mod+b exec --no-startup-id qutebrowser
