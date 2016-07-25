@@ -38,7 +38,9 @@ if [ -s "/usr/local/bin/dnvm.sh" ]; then
 fi
 
 # bash completion
-[[ -r $(brew --prefix)/etc/bash_completion ]] && . $(brew --prefix)/etc/bash_completion
+if [ which brew 2> /dev/null > /dev/null ]; then 
+  [[ -r $(brew --prefix)/etc/bash_completion ]] && . $(brew --prefix)/etc/bash_completion
+fi
 
 # nix env
 [ -f ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh

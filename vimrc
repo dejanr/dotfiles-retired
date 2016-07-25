@@ -161,6 +161,9 @@ Plug 'guns/vim-clojure-highlight'
 " GraphQL
 Plug 'jparise/vim-graphql'
 
+" Nix
+Plug 'LnL7/vim-nix'
+
 " }}}
 
 call plug#end()
