@@ -32,11 +32,6 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
   [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
 fi
 
-# .NET version manager
-if [ -s "/usr/local/bin/dnvm.sh" ]; then
-  source dnvm.sh
-fi
-
 # bash completion
 if [ which brew 2> /dev/null > /dev/null ]; then 
   [[ -r $(brew --prefix)/etc/bash_completion ]] && . $(brew --prefix)/etc/bash_completion
