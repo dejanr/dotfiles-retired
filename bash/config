@@ -26,11 +26,7 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# Node version manager
-if [ -s "$NVM_DIR/nvm.sh" ]; then
-  source ~/.nvm/nvm.sh
-  [[ -r $NVM_DIR/bash_completion ]] && . $NVM_DIR/bash_completion
-fi
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # bash completion
 if [ which brew 2> /dev/null > /dev/null ]; then 
