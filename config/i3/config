@@ -157,6 +157,9 @@ for_window [class="Pidgin"] move window to position 1500 50
 for_window [class="Thunar"] floating enable
 for_window [class="Thunar"] resize set 650 400
 for_window [class="Thunar"] move window to position 600 200
+for_window [class="Pcmanfm"] floating enable
+for_window [class="Pcmanfm"] resize set 750 500
+for_window [class="Pcmanfm"] move window to position 100 300
 for_window [class="Thunderbird"] floating enable
 for_window [class="Thunderbird"] resize set 920 1060
 for_window [class="Thunderbird"] move window to position 1000 20
@@ -203,7 +206,7 @@ exec --no-startup-id thunderbird
 exec --no-startup-id pidgin
 
 # applications
-bindsym $mod+n exec Thunar
+bindsym $mod+n exec pcmanfm
 bindsym $mod+p exec pidgin
 bindsym $mod+m exec thunderbird
 bindsym $mod+Shift+n exec --no-startup-id termite -t nm_tui_win -e "nmtui"
