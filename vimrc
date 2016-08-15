@@ -182,6 +182,8 @@ set expandtab
 set autoindent
 set smartindent
 
+set clipboard=unnamed
+
 " Necessary to show unicode glyphs
 set encoding=utf-8
 

@@ -41,7 +41,7 @@ set $monitor1 "DVI-I-1"
 set $monitor2 "HDMI-0"
 
 # General Configuration
-font pango:PragmataPro 12
+font pango:PragmataPro 10
 floating_modifier $mod
 hide_edge_borders both
 new_window none
@@ -173,7 +173,7 @@ client.urgent $base02 $base08 $base07 $base08
 
 # Bar
 bar {
-  font pango: PragmataPro, FontAwesome 11
+  font pango: PragmataPro, FontAwesome 10
   status_command i3blocks
   position top
   strip_workspace_numbers no
