@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 lock() {
-  i3lock
+  i3lock-fancy
 }
 
 case "$1" in
