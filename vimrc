@@ -1,172 +1,148 @@
+" Plug {{{1
+let s:bundle_dir   = '~/.vim/bundle'
+
+let g:plug_shallow = 0
+let g:plug_window  = 'enew'
+let g:plug_pwindow = 'vertical rightbelow new'
+
+call plug#begin(s:bundle_dir)
+  " General
+  Plug 'gmarik/vundle'
+
+  " Ack
+  Plug 'mileszs/ack.vim'
+
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+
+  Plug 'vim-scripts/IndexedSearch'
+
+  " Git
+  Plug 'tpope/vim-fugitive'
+  Plug 'gitv'
+  nmap <leader>g :Gstatus<cr>
+
+  Plug 'tpope/vim-unimpaired'
+  Plug 'godlygeek/tabular'
+  Plug 'Raimondi/delimitMate'
+  Plug 'surround.vim'
+
+  " Snipmate
+  Plug 'MarcWeber/vim-addon-mw-utils'
+  Plug 'tomtom/tlib_vim'
+  Plug 'garbas/vim-snipmate'
+
+  " Syntastic
+  Plug 'scrooloose/syntastic'
+
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_javascript_checkers = ['eslint']
+  let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['javascript'], 'passive_filetypes': ['html', 'less', 'yaml'] }
+  set synmaxcol=250
+
+  " Javascript
+  Plug 'pangloss/vim-javascript'
+  Plug 'jelera/vim-javascript-syntax'
+  Plug 'mxw/vim-jsx'
+
+  " Dont require jsx file extension for enabling this plugin
+  let g:jsx_ext_required = 0
+
+  " Plug 'JavaScript-Indent'
+  Plug 'JSON.vim'
+  Plug 'ParseJSON'
+
+  " Gist
+  Plug 'mattn/webapi-vim'
+  Plug 'mattn/gist-vim'
+
+  let g:gist_detect_filetype = 1
+  let g:gist_show_privates = 1
+  let g:gist_get_multiplefile = 1
+  let g:gist_clip_command = 'pbcopy'
+  let g:gist_browser_command = '/usr/bin/open -a "/Applications/Google Chrome.app" "%URL%"'
+
+  " Vimux
+  Plug 'vimux'
+
+  " Syntax Attribute Checker
+  Plug 'SyntaxAttr.vim'
+
+  " Better Status Line
+  Plug 'bling/vim-airline'
+
+  let g:airline_left_sep=''
+  let g:airline_right_sep=''
+
+  " Markdown
+  Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
+
+  " Bash
+  Plug 'bash-support.vim'
+
+  " CtrlP
+  Plug 'kien/ctrlp.vim'
+
+  let g:ctrlp_use_caching = 1
+  let g:ctrlp_clear_cache_on_exit = 1
+  let g:ctrlp_working_path_mode = ''
+
+  nmap <leader>b :CtrlPBuffer<CR>
+
+  " Initialize ctrlp delete buffer from autoload (there is no bundle plugin yet)
+  " Use C-@ to delete buffer
+  call ctrlp_bdelete#init()
+
+  if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  endif
+
+  " NERDTree
+  Plug 'scrooloose/nerdtree'
+
+  let g:NERDTreeChDirMode = 2
+  let g:NERDTreeMinimalUI = 1
+
+  " Prevent deleting nerdtree buffer
+  autocmd FileType nerdtree cnoreabbrev <buffer> bd :call g:WorkaroundNERDTreeToggle()<CR>
+
+  function! g:WorkaroundNERDTreeToggle()
+    try | :NERDTreeToggle | catch | :enew | endtry
+    echo ''
+  endfunction
+
+  " Jade
+  Plug 'jade.vim'
+
+  map <silent> <leader>d :bd<CR>
+  map <silent> <leader>D :bd!<CR>
+  nnoremap [b :BB<CR>
+  nnoremap ]b :BF<CR>
+
+  Plug 'elm.vim'
+  Plug 'jnwhiteh/vim-golang'
+  Plug 'sickill/vim-pasta'
+  Plug 'othree/html5.vim'
+  Plug 'groenewege/vim-less'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'DrawIt'
+  Plug 'Vitality'
+  Plug 'kovisoft/slimv'
+  Plug 'tpope/vim-fireplace'
+  Plug 'guns/vim-clojure-static'
+  Plug 'kien/rainbow_parentheses.vim'
+  Plug 'guns/vim-clojure-highlight'
+  Plug 'jparise/vim-graphql'
+  Plug 'LnL7/vim-nix'
+
+  " Testing phase.
+
+call plug#end()
+" }}}1
+
 set nocompatible               " be iMproved
 filetype off                   " required!
 
 let mapleader = " "
-
-call plug#begin('~/.vim/plugged')
-
-" Plugs {{{
-
-" General
-Plug 'gmarik/vundle'
-
-" Ack
-Plug 'mileszs/ack.vim'
-
-let g:ackprg = 'ag --nogroup --nocolor --column'
-
-Plug 'vim-scripts/IndexedSearch'
-
-" Git
-Plug 'tpope/vim-fugitive'
-Plug 'gitv'
-nmap <leader>g :Gstatus<cr>
-
-Plug 'tpope/vim-unimpaired'
-Plug 'godlygeek/tabular'
-Plug 'Raimondi/delimitMate'
-Plug 'surround.vim'
-
-" Snipmate
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-
-" Syntastic
-Plug 'scrooloose/syntastic'
-
-let g:syntastic_check_on_open = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['javascript'], 'passive_filetypes': ['html', 'less', 'yaml'] }
-set synmaxcol=250
-
-" Javascript
-Plug 'pangloss/vim-javascript'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'mxw/vim-jsx'
-
-" Dont require jsx file extension for enabling this plugin
-let g:jsx_ext_required = 0
-
-" Plug 'JavaScript-Indent'
-Plug 'JSON.vim'
-Plug 'ParseJSON'
-
-" Gist
-Plug 'mattn/webapi-vim'
-Plug 'mattn/gist-vim'
-
-let g:gist_detect_filetype = 1
-let g:gist_show_privates = 1
-let g:gist_get_multiplefile = 1
-let g:gist_clip_command = 'pbcopy'
-let g:gist_browser_command = '/usr/bin/open -a "/Applications/Google Chrome.app" "%URL%"'
-
-" Vimux
-Plug 'vimux'
-
-" Syntax Attribute Checker
-Plug 'SyntaxAttr.vim'
-
-" Better Status Line
-Plug 'bling/vim-airline'
-
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-
-" Markdown
-Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-
-" Bash
-Plug 'bash-support.vim'
-
-" CtrlP
-Plug 'kien/ctrlp.vim'
-
-let g:ctrlp_use_caching = 1
-let g:ctrlp_clear_cache_on_exit = 1
-let g:ctrlp_working_path_mode = ''
-
-nmap <leader>b :CtrlPBuffer<CR>
-
-" Initialize ctrlp delete buffer from autoload (there is no bundle plugin yet)
-" Use C-@ to delete buffer
-call ctrlp_bdelete#init()
-
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
-" NERDTree
-Plug 'scrooloose/nerdtree'
-
-let g:NERDTreeChDirMode = 2
-let g:NERDTreeMinimalUI = 1
-
-" Prevent deleting nerdtree buffer
-autocmd FileType nerdtree cnoreabbrev <buffer> bd :call g:WorkaroundNERDTreeToggle()<CR>
-
-function! g:WorkaroundNERDTreeToggle()
-  try | :NERDTreeToggle | catch | :enew | endtry
-  echo ''
-endfunction
-
-" Jade
-Plug 'jade.vim'
-
-map <silent> <leader>d :bd<CR>
-map <silent> <leader>D :bd!<CR>
-nnoremap [b :BB<CR>
-nnoremap ]b :BF<CR>
-
-" Elm
-Plug 'elm.vim'
-
-" Go
-Plug 'jnwhiteh/vim-golang'
-
-" Better pasting
-Plug 'sickill/vim-pasta'
-
-" HTML
-Plug 'othree/html5.vim'
-
-" Less
-Plug 'groenewege/vim-less'
-
-" Tmux navigator
-Plug 'christoomey/vim-tmux-navigator'
-
-" Draw tech graphs
-Plug 'DrawIt'
-
-" For better cursor
-Plug 'Vitality'
-
-" Lisp
-Plug 'kovisoft/slimv'
-
-" Clojure repl support
-Plug 'tpope/vim-fireplace'
-
-" Clojure runtime files
-Plug 'guns/vim-clojure-static'
-
-" Clojure Better rainbox Parentheses
-Plug 'kien/rainbow_parentheses.vim'
-
-" Clojure Better higlighting
-Plug 'guns/vim-clojure-highlight'
-
-" GraphQL
-Plug 'jparise/vim-graphql'
-
-" Nix
-Plug 'LnL7/vim-nix'
-
-" }}}
-
-call plug#end()
 
 " Global Stuff
 "-----------------------------------------------------------------------------
