@@ -1,3 +1,0 @@
-[submodule "nvm"]
-	path = nvm
-	url = https://github.com/creationix/nvm.git

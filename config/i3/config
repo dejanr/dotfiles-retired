@@ -202,15 +202,10 @@ bindsym $mod+Shift+v split h
 exec --no-startup-id dunst
 exec --no-startup-id exec compton --config ~/.compton.conf -b
 exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
-exec --no-startup-id thunderbird
-exec --no-startup-id pidgin
 
 # applications
 bindsym $mod+n exec pcmanfm
-bindsym $mod+p exec pidgin
-bindsym $mod+m exec thunderbird
 bindsym $mod+Shift+n exec --no-startup-id termite -t nm_tui_win -e "nmtui"
-bindsym $mod+b exec --no-startup-id qutebrowser
 
 # i3 exit
 bindsym $mod+Shift+p exec --no-startup-id ~/.bin/rofi-power-management
