@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 lock() {
-  slimlock
+  xautolock -locknow &> /dev/null
 }
 
 case "$1" in

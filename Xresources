@@ -7,10 +7,10 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-URxvt.font:                xft:PragmataPro:pixelsize=12
-URxvt.boldFont:            xft:PragmataPro:pixelsize=12:bold
-URxvt.italicFont:          xft:PragmataPro:pixelsize=12:italic
-URxvt.boldItalicFont:      xft:PragmataPro:pixelsize=12:bold:italic
+URxvt.font:                xft:PragmataPro:pixelsize=10
+URxvt.boldFont:            xft:PragmataPro:pixelsize=10:bold
+URxvt.italicFont:          xft:PragmataPro:pixelsize=10:italic
+URxvt.boldItalicFont:      xft:PragmataPro:pixelsize=10:bold:italic
 URxvt.letterSpace:         -1
 
 URxvt*background:                     #181818
@@ -87,4 +87,3 @@ rofi.parse-known-hosts:              true
 rofi.separator-style:                solid
 rofi.hide-scrollbar:                 true
 rofi.threads:                        2
-rofi.dpi:                            227

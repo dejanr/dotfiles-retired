@@ -41,7 +41,7 @@ set $monitor1 "DVI-I-1"
 set $monitor2 "HDMI-0"
 
 # General Configuration
-font pango:PragmataPro 10
+font pango:PragmataPro 9
 floating_modifier $mod
 hide_edge_borders both
 new_window none
@@ -158,7 +158,7 @@ for_window [class="Thunar"] floating enable
 for_window [class="Thunar"] resize set 650 400
 for_window [class="Thunar"] move window to position 600 200
 for_window [class="Pcmanfm"] floating enable
-for_window [class="Pcmanfm"] resize set 750 500
+for_window [class="Pcmanfm"] resize set 1200 800
 for_window [class="Pcmanfm"] move window to position 100 300
 for_window [class="Thunderbird"] floating enable
 for_window [class="Thunderbird"] resize set 920 1060
@@ -173,7 +173,7 @@ client.urgent $base02 $base08 $base07 $base08
 
 # Bar
 bar {
-  font pango: PragmataPro, FontAwesome 10
+  font pango: PragmataPro, FontAwesome 9
   status_command i3blocks
   position top
   strip_workspace_numbers no
@@ -202,6 +202,7 @@ bindsym $mod+Shift+v split h
 exec --no-startup-id dunst
 exec --no-startup-id exec compton --config ~/.compton.conf -b
 exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
+exec --no-startup-id xautolock -time 15 -locker slimlock
 
 # applications
 bindsym $mod+n exec pcmanfm
