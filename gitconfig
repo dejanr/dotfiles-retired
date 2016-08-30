@@ -90,3 +90,5 @@
   changed = red bold
   untracked = normal
   nobranch = red bold
+[url "ssh://git@heroku.com/"]
+	insteadOf = https://git.heroku.com/
