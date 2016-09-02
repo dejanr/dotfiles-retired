@@ -43,3 +43,6 @@ config/enchant/
 config/libreofficedev/
 config/transmission/dht.dat
 config/transmission/stats.json
+config/google-chrome/
+config/Slack/
+config/spotify/
