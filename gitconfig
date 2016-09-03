@@ -18,9 +18,6 @@
   autocrlf     = false
   filemode     = false
 
-[init]
-  templatedir = ~/.git_template
-
 [fetch]
   prune = true
 
