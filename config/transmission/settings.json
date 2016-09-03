@@ -14,7 +14,7 @@
     "cache-size-mb": 4,
     "compact-view": false,
     "dht-enabled": true,
-    "download-dir": "/storage/downloads",
+    "download-dir": "/home/dejanr/downloads",
     "download-queue-enabled": true,
     "download-queue-size": 5,
     "encryption": 0,
