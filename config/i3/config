@@ -202,7 +202,7 @@ bindsym $mod+Shift+v split h
 exec --no-startup-id dunst
 exec --no-startup-id exec compton --config ~/.compton.conf -b
 exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
-exec --no-startup-id xautolock -time 15 -locker slimlock
+#exec --no-startup-id xautolock -time 15 -locker slimlock
 
 # applications
 bindsym $mod+n exec pcmanfm
