@@ -158,7 +158,7 @@ set expandtab
 set autoindent
 set smartindent
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Necessary to show unicode glyphs
 set encoding=utf-8
@@ -442,13 +442,8 @@ let g:VimuxUseNearestPane = 1
 nmap t :VimuxRunLastCommand<CR>
 nmap <leader>s :w<CR>
 
-if has('mouse')
-  set mouse=a
-  set mousehide
-
-  if has('mouse_sgr')
-    set ttymouse=sgr
-  endif
+if !has('nvim')
+  set ttymouse=xterm2
 endif
 
 " dont map stupid s
