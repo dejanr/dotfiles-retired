@@ -46,3 +46,5 @@ config/transmission/stats.json
 config/google-chrome/
 config/Slack/
 config/spotify/
+config/inkscape/
+config/unity3d/
