@@ -2,7 +2,7 @@
 scrollback_lines = 10000
 font             = PragmataPro Regular 10
 clickable_url    = true
-browser          = chromium
+browser          = google-chrome-stable
 allow_bold       = true
 allow_italic     = true
 visible_bell     = false
