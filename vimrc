@@ -442,13 +442,8 @@ let g:VimuxUseNearestPane = 1
 nmap t :VimuxRunLastCommand<CR>
 nmap <leader>s :w<CR>
 
-if has('mouse')
-  set mouse=a
-  set mousehide
-
-  if has('mouse_sgr')
-    set ttymouse=sgr
-  endif
+if !has('nvim')
+  set ttymouse=xterm2
 endif
 
 " dont map stupid s
