@@ -4,8 +4,8 @@ alias sudo='sudo '
 # cd
 alias ..='cd ..'
 
-alias vi='vim'
-alias vim='vim'
+alias vi='nvim'
+alias vim='nvim'
 alias e='emacsclient -t'
 alias em='emacsclient -c'
 alias dig='dig +short +noshort'
@@ -44,7 +44,7 @@ alias gb='git branch'
 alias gs='clear;git status -sb'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias gpom='git push origin HEAD:refs/for/master'
-alias gitv="vim -c 'Gitv' ."
+alias gitv="nvim -c 'Gitv' ."
 
 # wget as regular browser
 alias wgets='wget --referer="http://www.google.com" --user-agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6" --header="Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5" --header="Accept-Language: en-us,en;q=0.5" --header="Accept-Encoding: gzip,deflate" --header="Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7" --header="Keep-Alive: 300"'

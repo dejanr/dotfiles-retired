@@ -65,7 +65,8 @@ Plug 'groenewege/vim-less' " Syntax for LESS
 Plug 'benmills/vimux' " vim plugin to interact with tmux
 Plug 'mileszs/ack.vim' " Search tool
 Plug 'gitv' " Git history browser
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive' " Git tools
+Plug 'vim-scripts/gitv' " Gitk alternative
 
 " Gist
 Plug 'mattn/webapi-vim'
