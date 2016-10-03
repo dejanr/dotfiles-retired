@@ -48,3 +48,7 @@ config/Slack/
 config/spotify/
 config/inkscape/
 config/unity3d/
+config/nvim/plugged
+config/nvim/backup/
+config/nvim/undodir/
+.netrwhist
