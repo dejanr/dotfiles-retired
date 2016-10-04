@@ -28,8 +28,7 @@ if has("autocmd")
     " For all text files set 'textwidth' to 78 characters.
     autocmd FileType text setlocal textwidth=108
 
-    " Trim whitespace onsave
-    autocmd BufWritePre * %s/\s\+$//e
+    autocmd BufWritePre * StripWhitespace
 
     " When editing a file, always jump to the last known position.
     autocmd BufReadPost *
@@ -153,3 +152,7 @@ set novb
 
 " wrapping off
 set nowrap
+
+" set color for extra whitespace and trailing whitespaces
+highlight Trail ctermbg=none guibg=none
+highlight ExtraWhitespace ctermbg=red guibg=red
