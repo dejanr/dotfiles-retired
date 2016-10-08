@@ -1,5 +1,8 @@
 filetype plugin indent on
 
+" better whitespaces
+let g:better_whitespace_enabled = 0 " disable highlighting of extra whitespaces
+
 " deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 0

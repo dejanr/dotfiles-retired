@@ -33,6 +33,7 @@ Plug 'tpope/vim-unimpaired' " Pairs of handy bracket mappings
 Plug 'justinmk/vim-sneak' " The missing motion
 Plug 'vim-scripts/camelcasemotion' " Motion through CamelCaseWords and underscore_notation
 Plug 'sheerun/vim-polyglot' " A solid language pack
+Plug 'ntpeters/vim-better-whitespace' " Better Whitespace Plugin
 
 " eye candy
 Plug 'vim-airline/vim-airline' " lean & mean status/tabline for vim that's light as air
@@ -40,6 +41,8 @@ Plug 'vim-airline/vim-airline-themes' " A collection of themes for vim-airline
 Plug 'lilydjwg/colorizer', { 'on': 'ColorToggle' } " Colorize all text in the form #rrggbb or #rg
 
 " javascript
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'guileen/vim-node-dict' " node.js dict for vim
 Plug 'moll/vim-node' " Tools and environment to make Vim superb for developing with Node.js
 Plug 'othree/yajs.vim', { 'for': 'javascript' } " Yet Another JavaScript Syntax
