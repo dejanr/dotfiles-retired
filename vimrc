@@ -158,7 +158,7 @@ set expandtab
 set autoindent
 set smartindent
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Necessary to show unicode glyphs
 set encoding=utf-8
@@ -436,7 +436,7 @@ set nolist
 nmap <silent> <leader>gn :enew<CR>:set ft=html<CR>idaily<tab>
 
 " Vimux
-let g:VimuxOrientation = "v"
+let g:VimuxOrientation = "h"
 let g:VimuxUseNearestPane = 1
 
 nmap t :VimuxRunLastCommand<CR>
