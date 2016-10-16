@@ -33,12 +33,12 @@
   mnemonicPrefix      = true
   compactionHeuristic = true
 
-[merge]
-  tool = vim3way
-
-[mergetool "vim3way"]
-  cmd = "vim -c 'call mergeutil#threeway()' \"$BASE\" \"$REMOTE\" \"$LOCAL\" \"$MERGED\""
-  trustExitCode = true
+#[merge]
+#  tool = vim3way
+#
+#[mergetool "vim3way"]
+#  cmd = "vim -c 'call mergeutil#threeway()' \"$BASE\" \"$REMOTE\" \"$LOCAL\" \"$MERGED\""
+#  trustExitCode = true
 
 [rerere]
   enabled = true

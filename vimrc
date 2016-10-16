@@ -158,7 +158,7 @@ set expandtab
 set autoindent
 set smartindent
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Necessary to show unicode glyphs
 set encoding=utf-8
@@ -220,6 +220,8 @@ autocmd! bufreadpost *.min.js set syntax=off
 
 " Hide the mouse pointer while typing
 set mousehide
+set mouse=a
+
 " Set mouse click are to be more compatible and wider on unsupported screens
 
 " Set up the gui cursor to look nice
@@ -436,15 +438,13 @@ set nolist
 nmap <silent> <leader>gn :enew<CR>:set ft=html<CR>idaily<tab>
 
 " Vimux
-let g:VimuxOrientation = "v"
+let g:VimuxOrientation = "h"
 let g:VimuxUseNearestPane = 1
 
 nmap t :VimuxRunLastCommand<CR>
 nmap <leader>s :w<CR>
 
-if !has('nvim')
-  set ttymouse=xterm2
-endif
+set ttymouse=xterm2
 
 " dont map stupid s
 nnoremap s <nop>
