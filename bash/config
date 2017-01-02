@@ -79,5 +79,5 @@ BASE16_SHELL="$HOME/.config/base16-shell-colors/base16-default.dark.sh"
 # NIX on OSX
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  . /Users/dejanr/.nix-profile/etc/profile.d/nix.sh
+  . ~/.nix-profile/etc/profile.d/nix.sh
 fi
