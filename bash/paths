@@ -1,4 +1,2 @@
-export NIX_PATH=nixpkgs=/etc/nixos/nixpkgs
 export GOPATH=~/Projects
-
 export PATH="./bin:node_modules/.bin:~/.npm/bin:~/.bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH"
