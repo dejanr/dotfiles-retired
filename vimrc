@@ -119,6 +119,7 @@ call plug#begin(s:bundle_dir)
   nnoremap ]b :BF<CR>
 
   Plug 'elm.vim'
+  Plug 'elmcast/elm-vim'
   Plug 'jnwhiteh/vim-golang'
   Plug 'sickill/vim-pasta'
   Plug 'othree/html5.vim'
