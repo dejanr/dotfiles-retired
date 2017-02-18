@@ -1,11 +1,3 @@
-# Gaps
-
-gaps inner 5
-gaps outer 5
-
-smart_borders on
-
-
 # Constants
 set $mod Mod4
 
