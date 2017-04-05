@@ -31,17 +31,12 @@ call plug#begin(s:bundle_dir)
   Plug 'tomtom/tlib_vim'
   Plug 'garbas/vim-snipmate'
 
-  " Syntastic
-  Plug 'scrooloose/syntastic'
+  Plug 'w0rp/ale'
 
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['javascript'], 'passive_filetypes': ['html', 'less', 'yaml'] }
-  set synmaxcol=250
+  let g:ale_linters = {'javascript': ['eslint']}
 
   " Javascript
   Plug 'pangloss/vim-javascript'
-  Plug 'jelera/vim-javascript-syntax'
   Plug 'mxw/vim-jsx'
 
   " Dont require jsx file extension for enabling this plugin
@@ -141,6 +136,9 @@ call plug#end()
 
 set nocompatible               " be iMproved
 filetype off                   " required!
+
+" ale runtime path
+let &runtimepath.=',~/.vim/bundle/ale'
 
 let mapleader = " "
 
