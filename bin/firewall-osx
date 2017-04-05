@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+socketfilterfw=/usr/libexec/ApplicationFirewall/socketfilterfw
+
+if [[ "$1" == on ]]; then
+  sudo  /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall on
+elif [[ "$1" == off ]]; then
+  sudo  /usr/libexec/ApplicationFirewall/socketfilterfw --setblockall off
+else
+  /usr/libexec/ApplicationFirewall/socketfilterfw --getblockall
+fi
