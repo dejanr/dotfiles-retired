@@ -69,7 +69,7 @@ mode "  " {
 
 # Restart-Related Bindings
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+x restart
 
 # Program-Related Bindings
 bindsym $mod+Return exec termite
@@ -202,4 +202,5 @@ bindsym $mod+Shift+n exec --no-startup-id termite -t nm_tui_win -e "nmtui"
 
 # i3 exit
 bindsym $mod+Shift+p exec --no-startup-id ~/.bin/rofi-power-management
+bindsym $mod+Shift+r exec --no-startup-id ~/.bin/remind-me
 bindsym $mod+Shift+o exec --no-startup-id "~/.bin/i3exit lock"
