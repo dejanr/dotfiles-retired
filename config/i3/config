@@ -201,6 +201,5 @@ bindsym $mod+n exec pcmanfm
 bindsym $mod+Shift+n exec --no-startup-id termite -t nm_tui_win -e "nmtui"
 
 # i3 exit
-bindsym $mod+Shift+p exec --no-startup-id ~/.bin/rofi-power-management
+bindsym $mod+Shift+p exec --no-startup-id ~/.bin/lock
 bindsym $mod+Shift+r exec --no-startup-id ~/.bin/remind-me
-bindsym $mod+Shift+o exec --no-startup-id "~/.bin/i3exit lock"
