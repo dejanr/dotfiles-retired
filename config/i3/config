@@ -69,7 +69,7 @@ mode "  " {
 
 # Restart-Related Bindings
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+x restart
 
 # Program-Related Bindings
 bindsym $mod+Return exec termite
@@ -155,6 +155,9 @@ for_window [class="Pcmanfm"] move window to position 100 300
 for_window [class="Thunderbird"] floating enable
 for_window [class="Thunderbird"] resize set 920 1060
 for_window [class="Thunderbird"] move window to position 1000 20
+for_window [class="Corebird"] floating enable
+for_window [class="Corebird"] resize set 450 1060
+for_window [class="Corebird"] move window to position 1470 18
 
 # Widow Colours
 #                         border  background text    indicator
@@ -199,7 +202,8 @@ exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
 # applications
 bindsym $mod+n exec pcmanfm
 bindsym $mod+Shift+n exec --no-startup-id termite -t nm_tui_win -e "nmtui"
+bindsym $mod+Shift+b exec --no-startup-id corebird
 
 # i3 exit
-bindsym $mod+Shift+p exec --no-startup-id ~/.bin/rofi-power-management
-bindsym $mod+Shift+o exec --no-startup-id "~/.bin/i3exit lock"
+bindsym $mod+Shift+p exec --no-startup-id ~/.bin/lock
+bindsym $mod+Shift+r exec --no-startup-id ~/.bin/remind-me

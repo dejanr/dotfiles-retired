@@ -1,8 +1,4 @@
-#!/usr/bin/env sh
-
-lock() {
-  xautolock -locknow &> /dev/null
-}
+#!/usr/bin/env bash
 
 case "$1" in
   lock)

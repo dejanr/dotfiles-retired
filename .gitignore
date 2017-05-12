@@ -52,3 +52,5 @@ config/nvim/plugged
 config/nvim/backup/
 config/nvim/undodir/
 .netrwhist
+config/corebird/
+config/QtProject.conf

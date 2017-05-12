@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+times=('10m' '20m' '30m' '1h' '2h' '3h' '5h' '8h' '13h' '21h')
+
+handle_time() {
+  if [[ $1 ]]; then
+    handle_text "$1" "$( rofi -dmenu -i -fixed-num-lines 10 -p 'Reminder - Note: ↠ ' )"
+  fi
+}
+
+handle_text() {
+  if [[ $2 ]]; then
+    notify-send -i clock "Reminder" "set in $1"
+    sleep "$1"
+    notify-send -t 0 -i clock "Reminder" "activated after $1 \n $2"
+  fi
+}
+
+handle_time "$( printf "%s\n" "${times[@]}" | rofi -dmenu -i -p 'Reminder - After: ↠ ' )"
