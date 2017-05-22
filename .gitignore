@@ -52,5 +52,7 @@ config/nvim/plugged
 config/nvim/backup/
 config/nvim/undodir/
 .netrwhist
+config/.exercism.json
 config/corebird/
 config/QtProject.conf
+config/yarn/
