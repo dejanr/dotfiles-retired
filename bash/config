@@ -11,6 +11,8 @@ export NVM_DIR=~/.nvm
 
 export XDG_CONFIG_HOME=~/.config
 
+export HOMEBREW_GITHUB_API_TOKEN="49f448785bf0d83f2b11daba179ebb6dbcd2a693"
+
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace

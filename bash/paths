@@ -1,5 +1,7 @@
 export GOPATH=~/Projects
-export PATH="./bin:node_modules/.bin:~/.npm/bin:~/.bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH"
+export JAVA_HOME=$(/usr/libexec/java_home)
+export ANDROID_HOME=~/Library/Android/sdk
 
-# Android
+export PATH="./bin:node_modules/.bin:~/.npm/bin:~/.bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH"
 export PATH="~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools:~/Library/Android/sdk/tools/bin:$PATH"
+
