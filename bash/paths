@@ -1,7 +1,9 @@
-export GOPATH=~/Projects
-export JAVA_HOME=$(/usr/libexec/java_home)
-export ANDROID_HOME=~/Library/Android/sdk
+export GOPATH=~/projects
 
 export PATH="./bin:node_modules/.bin:~/.npm/bin:~/.bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH"
-export PATH="~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools:~/Library/Android/sdk/tools/bin:$PATH"
 
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  export JAVA_HOME=$(/usr/libexec/java_home)
+  export ANDROID_HOME=~/Library/Android/sdk
+  export PATH="~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools:~/Library/Android/sdk/tools/bin:$PATH"
+fi
