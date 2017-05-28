@@ -150,7 +150,7 @@ for_window [class="Thunar"] floating enable
 for_window [class="Thunar"] resize set 650 400
 for_window [class="Thunar"] move window to position 600 200
 for_window [class="Pcmanfm"] floating enable
-for_window [class="Pcmanfm"] resize set 1200 800
+for_window [class="Pcmanfm"] resize set 1200 700
 for_window [class="Pcmanfm"] move window to position 100 300
 for_window [class="Thunderbird"] floating enable
 for_window [class="Thunderbird"] resize set 920 1060
@@ -201,7 +201,6 @@ exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
 
 # applications
 bindsym $mod+n exec pcmanfm
-bindsym $mod+Shift+n exec --no-startup-id termite -t nm_tui_win -e "nmtui"
 bindsym $mod+Shift+b exec --no-startup-id corebird
 
 # i3 exit
