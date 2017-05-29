@@ -112,8 +112,6 @@ call plug#begin(s:bundle_dir)
   " Jade
   Plug 'jade.vim'
 
-  map <silent> <leader>d :bd<CR>
-  map <silent> <leader>D :bd!<CR>
   nnoremap [b :BB<CR>
   nnoremap ]b :BF<CR>
 
@@ -133,6 +131,7 @@ call plug#begin(s:bundle_dir)
   Plug 'guns/vim-clojure-highlight'
   Plug 'jparise/vim-graphql'
   Plug 'LnL7/vim-nix'
+  Plug 'mhinz/vim-sayonara'
 
   " Testing phase.
 
@@ -329,16 +328,13 @@ nmap <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <C-o> 20zl
 nmap <silent> <C-i> 20zh
 
-nmap <silent> <leader>q :q!<CR>
+nmap <silent> <leader>q :Sayonara<CR>
 
 " Syntax coloring lines that are too long just slows down the world
 set synmaxcol=2048
 
 " I don't like it when the matching parens are automatically highlighted
 " let loaded_matchparen = 1
-
-" Show syntax highlighting groups for word under cursor
-nmap <leader>g :call SyntaxAttr()<CR>
 
 " Rebuild ctaglist
 nmap <leader>cx :!ctags<CR>
