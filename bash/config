@@ -33,9 +33,6 @@ if [ which brew 2> /dev/null > /dev/null ]; then
   [[ -r $(brew --prefix)/etc/bash_completion ]] && . $(brew --prefix)/etc/bash_completion
 fi
 
-# nix env
-[ -f ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
-
 source ~/.dotfiles/bash/paths
 source ~/.dotfiles/bash/functions
 source ~/.dotfiles/bash/prompt
