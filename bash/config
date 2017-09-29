@@ -35,6 +35,9 @@ fi
 # nix env
 [ -f ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
 
+# local env variables
+[ -f ~/.local.env ] && . ~/.local.env
+
 source ~/.dotfiles/bash/paths
 source ~/.dotfiles/bash/functions
 source ~/.dotfiles/bash/prompt

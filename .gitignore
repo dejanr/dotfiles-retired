@@ -56,3 +56,4 @@ config/.exercism.json
 config/corebird/
 config/QtProject.conf
 config/yarn/
+local.env

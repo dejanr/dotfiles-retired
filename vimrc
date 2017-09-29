@@ -18,13 +18,13 @@ call plug#begin(s:bundle_dir)
 
   " Git
   Plug 'tpope/vim-fugitive'
-  Plug 'gitv'
+  Plug 'gregsexton/gitv'
   nmap <leader>g :Gstatus<cr>
 
   Plug 'tpope/vim-unimpaired'
   Plug 'godlygeek/tabular'
   Plug 'Raimondi/delimitMate'
-  Plug 'surround.vim'
+  Plug 'tpope/vim-surround'
 
   " Snipmate
   Plug 'MarcWeber/vim-addon-mw-utils'
@@ -47,8 +47,8 @@ call plug#begin(s:bundle_dir)
   let g:jsx_ext_required = 0
 
   " Plug 'JavaScript-Indent'
-  Plug 'JSON.vim'
-  Plug 'ParseJSON'
+  Plug 'elzr/vim-json'
+  Plug 'vim-scripts/ParseJSON'
 
   " Gist
   Plug 'mattn/webapi-vim'
@@ -61,10 +61,10 @@ call plug#begin(s:bundle_dir)
   let g:gist_browser_command = '/usr/bin/open -a "/Applications/Google Chrome.app" "%URL%"'
 
   " Vimux
-  Plug 'vimux'
+  Plug 'benmills/vimux'
 
   " Syntax Attribute Checker
-  Plug 'SyntaxAttr.vim'
+  Plug 'vim-scripts/SyntaxAttr.vim'
 
   " Better Status Line
   Plug 'bling/vim-airline'
@@ -76,7 +76,7 @@ call plug#begin(s:bundle_dir)
   Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 
   " Bash
-  Plug 'bash-support.vim'
+  Plug 'WolfgangMehner/bash-support'
 
   " CtrlP
   Plug 'kien/ctrlp.vim'
@@ -109,21 +109,17 @@ call plug#begin(s:bundle_dir)
     echo ''
   endfunction
 
-  " Jade
-  Plug 'jade.vim'
-
   nnoremap [b :BB<CR>
   nnoremap ]b :BF<CR>
 
-  Plug 'elm.vim'
-  Plug 'elmcast/elm-vim'
+  Plug 'ElmCast/elm-vim'
   Plug 'jnwhiteh/vim-golang'
   Plug 'sickill/vim-pasta'
   Plug 'othree/html5.vim'
   Plug 'groenewege/vim-less'
   Plug 'christoomey/vim-tmux-navigator'
-  Plug 'DrawIt'
-  Plug 'Vitality'
+  Plug 'vim-scripts/DrawIt'
+  Plug 'sjl/vitality.vim'
   Plug 'kovisoft/slimv'
   Plug 'tpope/vim-fireplace'
   Plug 'guns/vim-clojure-static'
