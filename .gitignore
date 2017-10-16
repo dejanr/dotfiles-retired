@@ -7,11 +7,11 @@ vim/bundle/*
 vim/.netrwhist
 vim/.VimballRecord
 ssh/known_hosts
+ssh/config
 ssh/authorized_keys
 ssh/authorized_keys2
 ssh/environment-*
-ssh/id_rsa
-ssh/id_rsa.pub
+ssh/id_*
 config/gtk-2.0
 gist-vim
 config/configstore/
