@@ -5,9 +5,14 @@
     pkgs.nix-repl
     pkgs.tmux
     pkgs.vim
-    pkgs.git
+    pkgs.gitAndTools.gitFull
+    pkgs.gitAndTools.git-extras
+    pkgs.gitAndTools.gitflow
     pkgs.nodejs-8_x
     pkgs.imagemagick
+    pkgs.fastlane
+    pkgs.jdk
+    pkgs.ag
   ];
 
   # Create /etc/bashrc that loads the nix-darwin environment.
