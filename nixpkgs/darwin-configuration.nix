@@ -1,6 +1,9 @@
 { config, lib, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfreeRedistributable = true;
+
   environment.systemPackages = [
     pkgs.nix-repl
     pkgs.tmux
@@ -13,6 +16,8 @@
     pkgs.fastlane
     pkgs.jdk
     pkgs.ag
+    pkgs.minecraft
+    pkgs.minecraft-server
   ];
 
   # Create /etc/bashrc that loads the nix-darwin environment.
