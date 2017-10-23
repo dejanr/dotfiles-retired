@@ -16,6 +16,7 @@
     pkgs.fastlane
     pkgs.jdk
     pkgs.ag
+    pkgs.ack
     pkgs.minecraft
     pkgs.minecraft-server
   ];
