@@ -19,6 +19,7 @@
     pkgs.ack
     pkgs.minecraft
     pkgs.minecraft-server
+    pkgs.reattach-to-user-namespace
   ];
 
   # Create /etc/bashrc that loads the nix-darwin environment.
