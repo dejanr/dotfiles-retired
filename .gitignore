@@ -57,3 +57,5 @@ config/corebird/
 config/QtProject.conf
 config/yarn/
 local.env
+nix-defexpr/channels
+nix-defexpr/channels_root
