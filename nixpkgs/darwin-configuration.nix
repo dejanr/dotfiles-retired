@@ -36,7 +36,7 @@
 
   system.defaults.dock.autohide = true;
   system.defaults.dock.orientation = "left";
-  system.defaults.dock.showhidden = true;
+  system.defaults.dock.showhidden = false;
   system.defaults.dock.mru-spaces = false;
 
   system.defaults.finder.AppleShowAllExtensions = true;
