@@ -201,16 +201,9 @@ bar {
 }
 
 # split in vertical orientation
-bindsym $mod+v split v
-
+bindsym $mod+s split v
 # split in horizontal orientation
-bindsym $mod+Shift+v split h
-
-# Startup stuff
-exec --no-startup-id dunst
-exec --no-startup-id exec compton --config ~/.compton.conf -b
-exec --no-startup-id feh --randomize --bg-fill ~/.wallpapers/*
-exec --no-startup-id xautolock -time 15 -locker ~/.bin/lock
+bindsym $mod+v split h
 
 # applications
 bindsym $mod+n exec pcmanfm
