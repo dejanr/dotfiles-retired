@@ -170,7 +170,7 @@ for_window [class="Thunderbird"] resize set 920 1060
 for_window [class="Thunderbird"] move window to position 1000 20
 for_window [class="Corebird"] floating enable
 for_window [class="Corebird"] resize set 450 1060
-for_window [class="Corebird"] move window to position 1470 18
+for_window [class="Corebird"] move window to position 1400 18
 
 # Widow Colours
 #                         border  background text    indicator
