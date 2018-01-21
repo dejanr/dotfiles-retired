@@ -131,6 +131,9 @@ call plug#begin(s:bundle_dir)
 
   " Testing phase.
 
+  " ReasonML
+  Plug 'reasonml-editor/vim-reason'
+
 call plug#end()
 " }}}1
 

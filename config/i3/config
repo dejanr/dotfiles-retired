@@ -170,7 +170,7 @@ for_window [class="Thunderbird"] resize set 920 1060
 for_window [class="Thunderbird"] move window to position 1000 20
 for_window [class="Corebird"] floating enable
 for_window [class="Corebird"] resize set 450 1060
-for_window [class="Corebird"] move window to position 1400 18
+for_window [class="Corebird"] move window to position 1470 18
 
 # Widow Colours
 #                         border  background text    indicator
@@ -178,6 +178,27 @@ client.focused $base0D $base0D $base00 $base01
 client.focused_inactive $base02 $base02 $base03 $base01
 client.unfocused $base01 $base01 $base03 $base01
 client.urgent $base02 $base08 $base07 $base08
+
+# Bar
+bar {
+  font pango: PragmataPro, FontAwesome 9
+  status_command i3blocks
+  position top
+  strip_workspace_numbers no
+  bindsym button4 nop
+  bindsym button5 nop
+
+  colors {
+    separator $base03
+    background $base01
+    statusline $base05
+    #                  border  background text
+    focused_workspace  $base0C $base0D    $base00
+    active_workspace   $base02 $base02    $base07
+    inactive_workspace $base01 $base01    $base03
+    urgent_workspace   $base08 $base08    $base07
+  }
+}
 
 # split in vertical orientation
 bindsym $mod+s split v
