@@ -38,6 +38,8 @@ fi
 # local env variables
 [ -f ~/.local.env ] && . ~/.local.env
 
+[ -f ~/.opam/opam-init/init.sh ] && . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
 source ~/.dotfiles/bash/paths
 source ~/.dotfiles/bash/functions
 source ~/.dotfiles/bash/prompt
