@@ -13,7 +13,7 @@ function alias_completion {
 
     # create temporary file for wrapper functions and completions
     rm -f "/tmp/${namespace}-*.tmp" # preliminary cleanup
-    local tmp_file="$(mktemp "/tmp/${namespace}-${RANDOM}.tmp")" || return 1
+    local tmp_file="$(mktemp || mktemp -t 'le')" || return 1
 
     # read in "<alias> '<aliased command>' '<command args>'" lines from defined aliases
     local line; while read line; do
