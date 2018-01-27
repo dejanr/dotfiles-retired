@@ -60,3 +60,4 @@ local.env
 nix-defexpr/channels
 nix-defexpr/channels_root
 config/VirtualBox/
+config/exercism.json
