@@ -1,11 +1,9 @@
 " Plug {{{1
-let s:bundle_dir   = '~/.vim/bundle'
-
 let g:plug_shallow = 0
 let g:plug_window  = 'enew'
 let g:plug_pwindow = 'vertical rightbelow new'
 
-call plug#begin(s:bundle_dir)
+call plug#begin('~/.vim/plugged')
   " General
   Plug 'gmarik/vundle'
 
@@ -34,6 +32,7 @@ call plug#begin(s:bundle_dir)
   Plug 'w0rp/ale'
 
   let g:ale_linters = {'javascript': ['eslint']}
+  let g:ale_javascript_eslint_executable = './node_modules/.bin/eslint'
   let g:ale_sign_column_always = 1
   let g:ale_sign_error = '>'
   let g:ale_sign_warning = '-'
