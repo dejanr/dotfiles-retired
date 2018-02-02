@@ -5,6 +5,9 @@ export PATH="./bin:node_modules/.bin:~/.npm/bin:~/.bin:/usr/local/bin:/usr/local
 export NIX_PATH=nixpkgs=/etc/nixos/nixpkgs:nixos-config=/etc/nixos/configuration.nix:$NIX_PATH
 export NIX_PATH=darwin=/etc/nixos/darwin:darwin-config=/etc/nixos/machines/darwin.nix:$NIX_PATH
 
+export GEM_HOME=$HOME/.gem
+export PATH=$GEM_HOME/bin:$PATH
+
 if [[ "$(uname -s)" == "Darwin" ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
   export ANDROID_HOME=~/Library/Android/sdk
