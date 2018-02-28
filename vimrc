@@ -127,6 +127,9 @@ call plug#begin('~/.vim/plugged')
 
   " Testing phase.
 
+  " ReasonML
+  Plug 'reasonml-editor/vim-reason'
+
   " Prettier
   Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 

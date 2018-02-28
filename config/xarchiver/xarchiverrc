@@ -1,5 +1,6 @@
 [xarchiver]
 preferred_format=0
+prefer_unzip=true
 confirm_deletion=true
 sort_filename_content=false
 store_output=false
@@ -10,12 +11,15 @@ show_location_bar=true
 show_toolbar=true
 preferred_temp_dir=/tmp
 allow_sub_dir=0
+ensure_directory=false
 overwrite=false
 full_path=true
 touch=false
-freshen=false
+fresh=false
 update=false
 store_path=false
+updadd=false
+freshen=false
 recurse=true
 solid_archive=false
 remove_files=false
