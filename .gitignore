@@ -59,3 +59,6 @@ config/yarn/
 local.env
 nix-defexpr/channels
 nix-defexpr/channels_root
+config/gcloud
+ssh/google_compute_engine
+ssh/google_compute_engine.pub

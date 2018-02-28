@@ -65,9 +65,6 @@ call plug#begin('~/.vim/plugged')
   " Syntax Attribute Checker
   Plug 'vim-scripts/SyntaxAttr.vim'
 
-  " Better Status Line
-  Plug 'bling/vim-airline'
-
   let g:airline_left_sep=''
   let g:airline_right_sep=''
 
@@ -130,6 +127,46 @@ call plug#begin('~/.vim/plugged')
 
   " Testing phase.
 
+  " Prettier
+  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+  let g:prettier#exec_cmd_async = 1
+  let g:prettier#autoformat = 0
+  autocmd BufWritePre *.js,*.md PrettierAsync
+
+  " Org Mode
+  Plug 'tpope/vim-repeat'
+  Plug 'vim-scripts/utl.vim'
+  Plug 'vim-scripts/SyntaxRange'
+  Plug 'jceb/vim-orgmode'
+
+  " More focus
+  Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/limelight.vim'
+
+  " Better Status Line
+  Plug 'itchyny/lightline.vim'
+
+  function! s:goyo_enter()
+    silent !tmux set status off
+    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+    set noshowmode
+    set noshowcmd
+    set scrolloff=999
+    Limelight
+  endfunction
+
+  function! s:goyo_leave()
+    silent !tmux set status on
+    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+    set showmode
+    set showcmd
+    set scrolloff=5
+    Limelight!
+  endfunction
+
+  autocmd! User GoyoEnter nested call <SID>goyo_enter()
+  autocmd! User GoyoLeave nested call <SID>goyo_leave()
 call plug#end()
 " }}}1
 
@@ -269,8 +306,10 @@ set complete=.,w,b,t
 " When completing by tag, show the whole tag, not just the function name
 set showfulltag
 
-" Set the textwidth to be 120 chars
-set textwidth=120
+" No wrapping
+set textwidth=0
+set wrapmargin=0
+set formatoptions-=t
 
 " get rid of the silly characters in window separators
 set fillchars=""
