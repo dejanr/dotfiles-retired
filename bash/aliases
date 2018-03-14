@@ -15,8 +15,10 @@ alias pdf='xpdf -fullscreen'
 alias xpdf='xpdf -fullscreen'
 
 # clipboard
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
+if [[ "$(uname -s)" != "Darwin" ]]; then
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+fi
 
 # pager
 alias less='less -R'
@@ -59,3 +61,6 @@ alias wgets='wget --referer="http://www.google.com" --user-agent="Mozilla/5.0 (W
 # alias nixos-rebuild="nixos-rebuild -I nixpkgs=/etc/nixos/nixpkgs "
 #
 alias timestamp="date +%s"
+
+# generate random password and save it in clipboard
+alias passgen="date +%s | shasum | base64 | head -c 8 | pbcopy | echo \"Password saved in clipboard\""

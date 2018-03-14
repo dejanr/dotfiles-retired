@@ -127,6 +127,14 @@ call plug#begin('~/.vim/plugged')
 
   " Testing phase.
 
+  " Styled Components
+
+  Plug 'styled-components/vim-styled-components'
+
+  " TypeScript
+
+  Plug 'leafgarland/typescript-vim'
+
   " ReasonML
   Plug 'reasonml-editor/vim-reason'
 
@@ -135,6 +143,7 @@ call plug#begin('~/.vim/plugged')
 
   let g:prettier#exec_cmd_async = 1
   let g:prettier#autoformat = 0
+  let g:prettier#quickfix_enabled = 0
   autocmd BufWritePre *.js,*.md PrettierAsync
 
   " Org Mode
@@ -341,6 +350,9 @@ colorscheme base16-default
 " disable swapping
 set nobackup
 set noswapfile
+
+" Auto read file when a file has been changed outside of vim
+set autoread
 
 " Toggle paste mode
 nmap <silent> <leader>i :set invpaste<CR>:set paste?<CR>
