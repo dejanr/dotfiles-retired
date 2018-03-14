@@ -64,3 +64,5 @@ ssh/google_compute_engine
 ssh/google_compute_engine.pub
 config/VirtualBox/
 config/exercism.json
+config/mps-youtube/
+config/asciinema/

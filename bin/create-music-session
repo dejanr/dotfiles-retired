@@ -1,0 +1,8 @@
+ tmux new-session -s music -n editor -d
+ tmux send-keys mpsyt Enter
+
+if [ -z "$TMUX" ]; then
+  tmux attach -t music
+else
+  tmux switch-client -t music
+fi

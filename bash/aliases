@@ -20,12 +20,19 @@ if [[ "$(uname -s)" != "Darwin" ]]; then
   alias pbpaste='xclip -selection clipboard -o'
 fi
 
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+fi
+
 # pager
 alias less='less -R'
 alias more='more -R'
 
 # irc
 alias irc="export TERM=screen && if tmux has-session -t irc; then tmux attach -t irc; else create-irc-session; fi"
+
+# youtube music player
+alias music="export TERM=screen && if tmux has-session -t music; then tmux attach -t music; else create-music-session; fi"
 
 # ls
 alias l="ls $LS_OPTIONS -CF"
@@ -59,8 +66,7 @@ alias wgets='wget --referer="http://www.google.com" --user-agent="Mozilla/5.0 (W
 # alias nix-search="nix-env -I nixpkgs=/etc/nixos/nixpkgs -f '<nixpkgs>' -qaP "
 # alias nix-install="nix-env -I nixpkgs=/etc/nixos/nixpkgs -f '<nixpkgs>' -iA "
 # alias nixos-rebuild="nixos-rebuild -I nixpkgs=/etc/nixos/nixpkgs "
-#
-alias timestamp="date +%s"
 
+alias timestamp="date +%s"
 # generate random password and save it in clipboard
 alias passgen="date +%s | shasum | base64 | head -c 8 | pbcopy | echo \"Password saved in clipboard\""
