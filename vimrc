@@ -96,6 +96,7 @@ call plug#begin('~/.vim/plugged')
 
   let g:NERDTreeChDirMode = 2
   let g:NERDTreeMinimalUI = 1
+  let g:NERDTreeIgnore=['node_modules', 'build', 'coverage']
 
   " Prevent deleting nerdtree buffer
   autocmd FileType nerdtree cnoreabbrev <buffer> bd :call g:WorkaroundNERDTreeToggle()<CR>
