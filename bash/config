@@ -87,8 +87,10 @@ stty ixoff -ixon
 BASE16_SHELL="$HOME/.config/base16-shell-colors/base16-default.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL 
 
-# NIX on OSX
+# Nix On OSX
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ] && . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+  if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+  fi
 fi
