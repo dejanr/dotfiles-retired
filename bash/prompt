@@ -1,7 +1,4 @@
 # Promt config
 
-if [ which gitHUD 2> /dev/null > /dev/null ]; then 
-  export PS1="\w\[\033[0;32m\] \$(gitHUD)\[\033[0m\] λ "
-else
-  export PS1=" λ "
-fi
+export PS1="\w\[\033[0;32m\] \$(gitHUD)\[\033[0m\] 
+λ "
