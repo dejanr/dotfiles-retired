@@ -140,7 +140,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'reasonml-editor/vim-reason'
 
   " Prettier
-  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+  Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
   let g:prettier#exec_cmd_async = 1
   let g:prettier#autoformat = 0
