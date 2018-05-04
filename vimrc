@@ -151,6 +151,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'vim-scripts/utl.vim'
   Plug 'vim-scripts/SyntaxRange'
+  Plug 'tpope/vim-speeddating'
+  " Silence vim-orgmode Speeddating missing
+  command -nargs=* -range SpeedDatingFormat
   Plug 'jceb/vim-orgmode'
 
   " More focus
@@ -375,8 +378,8 @@ nmap <leader>ev :e $MYVIMRC<CR>
 nmap <leader>sv :so $MYVIMRC<CR>
 
 " Make horizontal scrolling easier
-nmap <silent> <C-o> 20zl
-nmap <silent> <C-i> 20zh
+nmap <silent> <C-h> 20zl
+nmap <silent> <C-l> 20zh
 
 nmap <silent> <leader>q :Sayonara<CR>
 
