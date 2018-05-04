@@ -140,7 +140,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'reasonml-editor/vim-reason'
 
   " Prettier
-  Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+  Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
   let g:prettier#exec_cmd_async = 1
   let g:prettier#autoformat = 0
@@ -316,8 +316,8 @@ set comments=sl:/*,mb:\ *,ex:\ */,O://,b:#,:%,:XCOMM,n:>,fb:-
 " Make the command-line completion better
 set wildmenu
 
-" Same as default except that I remove the 'u' option
-set complete=.,w,b,t
+" Set where vim should look for aut completion
+set complete=.,w,b,u,t,i,kspell
 
 " When completing by tag, show the whole tag, not just the function name
 set showfulltag
@@ -406,6 +406,9 @@ set wmh=0
 set wildignore+=.git/*,*/.git/*,*.DS_Store,*/node_modules/*,*/dist/*
 set wildignore+=*/cache/*,*/.sass-cache/*
 set wildignore+=*/coverage/*,*/public/*,*-min.js,*-build.js
+
+" When more then one result, match the first completion
+set wildmode="list:full"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => PHP
