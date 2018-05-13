@@ -1,10 +1,5 @@
 export GOPATH=~/projects
 
-export PATH="node_modules/.bin:~/.npm/bin:~/.bin:/run/current-system/sw/bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH"
-
-export NIX_PATH=nixpkgs=/etc/nixos/nixpkgs:nixos-config=/etc/nixos/configuration.nix:$NIX_PATH
-export NIX_PATH=darwin=/etc/nixos/darwin:darwin-config=/etc/nixos/machines/darwin.nix:$NIX_PATH
-
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
 
@@ -13,3 +8,8 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   export ANDROID_HOME=~/Library/Android/sdk
   export PATH="~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools:~/Library/Android/sdk/tools/bin:$PATH"
 fi
+
+export PATH="$HOME/.npm/bin:node_modules/.bin:$HOME/.bin:/run/current-system/sw/bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH"
+
+export NIX_PATH=nixpkgs=/etc/nixos/nixpkgs:nixos-config=/etc/nixos/configuration.nix:$NIX_PATH
+export NIX_PATH=darwin=/etc/nixos/darwin:darwin-config=/etc/nixos/machines/darwin.nix:$NIX_PATH
