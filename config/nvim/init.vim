@@ -19,6 +19,10 @@ set hidden
 set wildignore+=.git/*,*/.git/*,*.DS_Store,*/node_modules/*,*/dist/*
 set wildignore+=*/cache/*,*/.sass-cache/*
 set wildignore+=*/coverage/*,*/public/*,*-min.js,*-build.js
+set completeopt=longest,menuone
+
+" Set color scheme
+colorscheme tir_black
 
 " Keys
 
@@ -138,8 +142,6 @@ call plug#begin('~/.config/nvim/plugged')
 
   set formatexpr=LanguageClient#textDocument_rangeFormatting()
 
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
   " Prettier
   Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
@@ -188,5 +190,24 @@ call plug#begin('~/.config/nvim/plugged')
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
 
-  colorscheme tir_black
+  " Utlisnips
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+
+  let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips']
+  let g:UltiSnipsEditSplit="vertical"
+
+  " Javascript Statical Analysis
+  Plug 'ternjs/tern_for_vim'
+
+  " Deoplete Async completetion framework
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+  " Deoplete ternjs
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+  let g:tern#command = ["tern"]
+  let g:tern#arguments = ["--persistent"]
+  
+  " JavaScript Parameter Complete
+  Plug 'othree/jspc.vim'
 call plug#end()
