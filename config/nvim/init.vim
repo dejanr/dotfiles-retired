@@ -1,25 +1,44 @@
-let mapleader = " "                " set leader key for all shortcuts
-set nocompatible                   " Disable compatibility to old-time vi
-set showmatch                      " Show matching brackets.
-set ignorecase                     " Do case insensitive matching
-set mouse=v                        " middle-click paste with mouse
-set hlsearch                       " highlight search results
-set tabstop=2                      " number of columns occupied by a tab character
-set softtabstop=2                  " see multiple spaces as tabstops so <BS> does the right thing
-set expandtab                      " converts tabs to white space
-set shiftwidth=2                   " width for autoindents
-set autoindent                     " indent a new line the same amount as the line just typed
-set number                         " add line numbers
-set wildmode=longest,list          " get bash-like tab completions
-set smartindent                    " smart indentation when starting a new line
-set clipboard^=unnamed,unnamedplus " set clipboard
-set shortmess+=I                   " startup message
-set background=dark                " background theme color
+let mapleader = " "                                              " set leader key for all shortcuts
+set encoding=utf-8                                               " Necessary to show unicode glyphs
+set nocompatible                                                 " Disable compatibility to old-time vi
+set showmatch                                                    " Show matching brackets.
+set ignorecase                                                   " Do case insensitive matching
+set smartcase
+set hlsearch                                                     " highlight search results
+set tabstop=2                                                    " number of columns occupied by a tab character
+set softtabstop=2                                                " see multiple spaces as tabstops so <BS> does the right thing
+set expandtab                                                    " converts tabs to white space
+set shiftwidth=2                                                 " width for autoindents
+set backspace=2                                                  " Allow backspacing over indent, eol, and the start of an insert
+set autoindent                                                   " indent a new line the same amount as the line just typed
+set number                                                       " add line numbers
+set wildmode=longest,list                                        " get bash-like tab completions
+set smartindent                                                  " smart indentation when starting a new line
+set clipboard^=unnamed,unnamedplus                               " set clipboard
+set shortmess+=I                                                 " startup message
+set background=dark                                              " background theme color
 set hidden
-set wildignore+=.git/*,*/.git/*,*.DS_Store,*/node_modules/*,*/dist/*
-set wildignore+=*/cache/*,*/.sass-cache/*
-set wildignore+=*/coverage/*,*/public/*,*-min.js,*-build.js
+set wildignore+=.git/*,*/.git/*,*.DS_Store,*/node_modules/*      " ignore project related files
+set wildignore+=*-min.js,*-build.js                              " ignore minified files
 set completeopt=longest,menuone
+set nowrap
+set shell=bash
+set ch=1
+set novb
+set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B] " Status line
+set laststatus=2                                                 " always put a status line in, even if there is only one window
+set complete=.,w,b,u,t,i,kspell                                  " Set where vim should look for aut completion
+set showcmd                                                      " Show the current command in the lower right corner
+set noshowmode                                                   " dont show current mode as its visible in lightline instead
+set mousehide                                                    " hide mouse while typing
+set mouse=a
+set nobackup
+set noswapfile
+set autoread
+set wmh=0                                                        " minimum window height
+set listchars=tab:▸\ ,eol:● " Use custom characters for tabstops and EOLs
+set nolist " Dont show special characters by default
+set dictionary=/usr/share/dict/words " Set dictionary (Its used with C-X C-K to autocomplete words)
 
 " Set color scheme
 colorscheme tir_black
@@ -46,9 +65,6 @@ nmap <silent> <C-l> 20zh
 " dont map s
 nnoremap s <nop>
 
-" Run latest vimux command
-nmap t :VimuxRunLastCommand<cr>
-
 " Save file
 nmap <leader>s :w<cr>
 
@@ -73,9 +89,10 @@ call plug#begin('~/.config/nvim/plugged')
   let g:ale_linters = {'javascript': ['eslint']}
   let g:ale_javascript_eslint_executable = './node_modules/.bin/eslint'
   let g:ale_sign_column_always = 1
-  let g:ale_sign_error = '>'
-  let g:ale_sign_warning = '-'
+  let g:ale_sign_error = '●'
+  let g:ale_sign_warning = '.'
   let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+  let g:ale_lint_on_enter = 0
 
   " Gist
   Plug 'mattn/webapi-vim'
@@ -89,6 +106,11 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Vimux
   Plug 'benmills/vimux'
+  let g:VimuxOrientation = "h"
+  let g:VimuxUseNearestPane = 1
+
+	" Run latest vimux command
+	nmap t :VimuxRunLastCommand<cr>
 
   " CtrlP
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -126,12 +148,13 @@ call plug#begin('~/.config/nvim/plugged')
 
   Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
+    \ 'do': 'bash install.sh && npm install -g javascript-typescript-langserver ocaml-language-server'
     \ }
 
   let g:LanguageClient_serverCommands = {
     \ 'reason': ['ocaml-language-server', '--stdio'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ 'javascript': ['javascript-typescript-stdio'],
     \ }
 
   nnoremap <silent> gt :call LanguageClient#textDocument_typeDefinition()<cr>
@@ -207,7 +230,70 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   let g:tern#command = ["tern"]
   let g:tern#arguments = ["--persistent"]
-  
+
   " JavaScript Parameter Complete
   Plug 'othree/jspc.vim'
+
+  " Javascript/React
+  Plug 'pangloss/vim-javascript'
+  Plug 'mxw/vim-jsx'
+
+  " Vim status line
+  Plug 'itchyny/lightline.vim'
+  Plug 'edkolev/tmuxline.vim'
+
+  let g:lightline = {
+    \ 'colorscheme': 'wombat',
+    \ }
+
+  if !has('gui_running')
+    set t_Co=256
+  endif
 call plug#end()
+
+" CSS
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+" Strip trailing whitespace
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+autocmd BufWritePre *.* :call <SID>StripTrailingWhitespaces()
+
+" Bash like keys for the command line
+cnoremap <C-A> <Home>
+cnoremap <C-E> <End>
+cnoremap <C-K> <C-U>
+cnoremap <C-P> <Up>
+cnoremap <C-N> <Down>
+
+" Remap arrow keys
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
+" Special characters
+
+" Invisible character(tabstops, EOLs) custom color
+highlight NonText guifg=#124956
+
+" Toggle list, showing or hiding special chars
+nmap <leader>l :setlocal list!<cr>
+
+
+" netrw settings
+let g:netrw_banner = 0
+let g:netrw_browse_split = 0
