@@ -76,14 +76,27 @@ let g:plug_window  = 'enew'
 let g:plug_pwindow = 'vertical rightbelow new'
 
 call plug#begin('~/.config/nvim/plugged')
-
   " Ack
   Plug 'mileszs/ack.vim'
-
   let g:ackprg = 'ag --nogroup --nocolor --column'
 
+  " Ag
+  Plug 'rking/ag.vim'
+
+  let g:ag_prg = 'ag --nogroup --nocolor --column'
+  let g:ag_working_path_mode="r"
+
+  " Git 
   Plug 'gregsexton/gitv'
   nmap <leader>g :Gstatus<cr>
+
+  " Tim Pope
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-surround'
+  Plug 'Raimondi/delimitMate'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-speeddating'
 
   " Ale
   Plug 'w0rp/ale'
@@ -195,6 +208,7 @@ call plug#begin('~/.config/nvim/plugged')
     \ 'reason': ['ocaml-language-server', '--stdio'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
     \ 'javascript': ['javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['javascript-typescript-stdio'],
     \ }
 
   nnoremap <silent> gt :call LanguageClient#textDocument_typeDefinition()<cr>
@@ -253,6 +267,9 @@ call plug#begin('~/.config/nvim/plugged')
   " Javascript/React
   Plug 'pangloss/vim-javascript'
   Plug 'mxw/vim-jsx'
+
+  " Dont require jsx file extension for enabling this plugin
+  let g:jsx_ext_required = 0
 
   " Vim status line
   Plug 'itchyny/lightline.vim'
