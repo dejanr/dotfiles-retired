@@ -19,6 +19,7 @@ set shortmess+=I                                                 " startup messa
 set background=dark                                              " background theme color
 set hidden
 set wildignore+=.git/*,*/.git/*,*.DS_Store,*/node_modules/*      " ignore project related files
+set wildignore+=*/dist/*,*/coverage/*                            " ignore dist and coverage files
 set wildignore+=*-min.js,*-build.js                              " ignore minified files
 set completeopt=longest,menuone
 set nowrap
@@ -36,9 +37,9 @@ set nobackup
 set noswapfile
 set autoread
 set wmh=0                                                        " minimum window height
-set listchars=tab:▸\ ,eol:● " Use custom characters for tabstops and EOLs
-set nolist " Dont show special characters by default
-set dictionary=/usr/share/dict/words " Set dictionary (Its used with C-X C-K to autocomplete words)
+set listchars=tab:▸\ ,eol:●                                      " Use custom characters for tabstops and EOLs
+set nolist                                                       " Dont show special characters by default
+set dictionary=/usr/share/dict/words                             " Set dictionary (Its used with C-X C-K to autocomplete words)
 
 " Set color scheme
 colorscheme tir_black
@@ -84,15 +85,19 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'gregsexton/gitv'
   nmap <leader>g :Gstatus<cr>
 
+  " Ale
   Plug 'w0rp/ale'
-
   let g:ale_linters = {'javascript': ['eslint']}
   let g:ale_javascript_eslint_executable = './node_modules/.bin/eslint'
   let g:ale_sign_column_always = 1
-  let g:ale_sign_error = '●'
-  let g:ale_sign_warning = '.'
-  let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+  let g:ale_sign_error = '✗'
+  let g:ale_sign_warning = '▲'
+  let g:ale_statusline_format = ['✗ %d', '▲ %d', '⬥ ok']
   let g:ale_lint_on_enter = 0
+  let g:ale_set_highlights = 0
+
+  nmap ]l :ALENextWrap<CR>
+  nmap [l :ALEPreviousWrap<CR>
 
   " Gist
   Plug 'mattn/webapi-vim'
@@ -117,6 +122,41 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'junegunn/fzf.vim'
 
   nmap <C-p> :FZF<cr>
+
+  " FZF color scheme updater from https://github.com/junegunn/fzf.vim/issues/59
+  function! s:update_fzf_colors()
+    let rules =
+          \ { 'fg':      [['Normal',       'fg']],
+          \ 'bg':      [['Normal',       'bg']],
+          \ 'hl':      [['String',       'fg']],
+          \ 'fg+':     [['CursorColumn', 'fg'], ['Normal', 'fg']],
+          \ 'bg+':     [['CursorColumn', 'bg']],
+          \ 'hl+':     [['String',       'fg']],
+          \ 'info':    [['PreProc',      'fg']],
+          \ 'prompt':  [['Conditional',  'fg']],
+          \ 'pointer': [['Exception',    'fg']],
+          \ 'marker':  [['Keyword',      'fg']],
+          \ 'spinner': [['Label',        'fg']],
+          \ 'header':  [['Comment',      'fg']] }
+    let cols = []
+    for [name, pairs] in items(rules)
+      for pair in pairs
+        let code = synIDattr(synIDtrans(hlID(pair[0])), pair[1])
+        if !empty(name) && code != ''
+          call add(cols, name.':'.code)
+          break
+        endif
+      endfor
+    endfor
+    let s:orig_fzf_default_opts = get(s:, 'orig_fzf_default_opts', $FZF_DEFAULT_OPTS)
+    let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts .
+          \ (empty(cols) ? '' : (' --color='.join(cols, ',')))
+  endfunction
+
+  augroup _fzf
+    autocmd!
+    autocmd VimEnter,ColorScheme * call <sid>update_fzf_colors()
+  augroup END
 
   " NERDTree
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeFocus' }
@@ -173,30 +213,6 @@ call plug#begin('~/.config/nvim/plugged')
   let g:prettier#quickfix_enabled = 0
   autocmd BufWritePre *.js,*.md PrettierAsync
 
-  " Better Status Line
-  Plug 'itchyny/lightline.vim'
-
-  function! s:goyo_enter()
-    silent !tmux set status off
-    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
-    set noshowmode
-    set noshowcmd
-    set scrolloff=999
-    Limelight
-  endfunction
-
-  function! s:goyo_leave()
-    silent !tmux set status on
-    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
-    set showmode
-    set showcmd
-    set scrolloff=5
-    Limelight!
-  endfunction
-
-  autocmd! User GoyoEnter nested call <SID>goyo_enter()
-  autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
   " Sayonara
   " Sane buffer/window deletion.
 
@@ -244,7 +260,50 @@ call plug#begin('~/.config/nvim/plugged')
 
   let g:lightline = {
     \ 'colorscheme': 'wombat',
+    \ 'active': {
+    \   'left': [['mode', 'paste'], ['filename', 'modified']],
+    \   'right': [['lineinfo'], ['percent'], ['readonly', 'linter_warnings', 'linter_errors', 'linter_ok']]
+    \ },
+    \ 'component_expand': {
+    \   'linter_warnings': 'LightlineLinterWarnings',
+    \   'linter_errors': 'LightlineLinterErrors',
+    \   'linter_ok': 'LightlineLinterOK'
+    \ },
+    \ 'component_type': {
+    \   'readonly': 'error',
+    \   'linter_warnings': 'warning',
+    \   'linter_errors': 'error'
+    \ },
     \ }
+
+  function! LightlineLinterWarnings() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    return l:counts.total == 0 ? '' : printf('%d ◆', all_non_errors)
+  endfunction
+
+  function! LightlineLinterErrors() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    return l:counts.total == 0 ? '' : printf('%d ✗', all_errors)
+  endfunction
+
+  function! LightlineLinterOK() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    return l:counts.total == 0 ? '✓ ' : ''
+  endfunction
+
+  " Update and show lightline but only if it's visible (e.g., not in Goyo)
+  autocmd User ALELint call s:MaybeUpdateLightline()
+  function! s:MaybeUpdateLightline()
+    if exists('#lightline')
+      call lightline#update()
+    end
+  endfunction
 
   if !has('gui_running')
     set t_Co=256
@@ -253,20 +312,6 @@ call plug#end()
 
 " CSS
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
-" Strip trailing whitespace
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
-autocmd BufWritePre *.* :call <SID>StripTrailingWhitespaces()
 
 " Bash like keys for the command line
 cnoremap <C-A> <Home>

@@ -94,3 +94,6 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
     . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
   fi
 fi
+
+# FZF default command
+export FZF_DEFAULT_COMMAND='ag -l -g ""'

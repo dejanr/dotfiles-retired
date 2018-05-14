@@ -132,3 +132,7 @@ hi link csXmlTag Keyword
 hi clear SignColumn
 hi SignColumnError guifg=#B20000 guibg=#000000
 hi SignColumnWarning guifg=#FCE74A guibg=#000000
+
+" ALE syntac checker
+highlight ALEWarningSign ctermfg=203 ctermbg=none guisp=#FF6C60
+highlight ALEErrorSign ctermfg=203 ctermbg=none guisp=#FF6C60
