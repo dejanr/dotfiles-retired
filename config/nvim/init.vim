@@ -1,48 +1,47 @@
 let mapleader = " "                                              " set leader key for all shortcuts
-set encoding=utf-8                                               " Necessary to show unicode glyphs
-set nocompatible                                                 " Disable compatibility to old-time vi
-set showmatch                                                    " Show matching brackets.
-set ignorecase                                                   " Do case insensitive matching
-set smartcase
-set hlsearch                                                     " highlight search results
-set tabstop=2                                                    " number of columns occupied by a tab character
-set softtabstop=2                                                " see multiple spaces as tabstops so <BS> does the right thing
-set expandtab                                                    " converts tabs to white space
-set shiftwidth=2                                                 " width for autoindents
-set backspace=2                                                  " Allow backspacing over indent, eol, and the start of an insert
 set autoindent                                                   " indent a new line the same amount as the line just typed
-set number                                                       " add line numbers
-set wildmode=longest,list                                        " get bash-like tab completions
-set smartindent                                                  " smart indentation when starting a new line
-set clipboard^=unnamed,unnamedplus                               " set clipboard
-set shortmess+=I                                                 " startup message
-set background=dark                                              " background theme color
-set hidden
-set wildignore+=.git/*,*/.git/*,*.DS_Store,*/node_modules/*      " ignore project related files
-set wildignore+=*/dist/*,*/coverage/*                            " ignore dist and coverage files
-set wildignore+=*-min.js,*-build.js                              " ignore minified files
-set completeopt=longest,menuone
-set nowrap
-set shell=bash
-set ch=1
-set novb
-set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B] " Status line
-set laststatus=2                                                 " always put a status line in, even if there is only one window
-set complete=.,w,b,u,t,i,kspell                                  " Set where vim should look for aut completion
-set showcmd                                                      " Show the current command in the lower right corner
-set noshowmode                                                   " dont show current mode as its visible in lightline instead
-set mousehide                                                    " hide mouse while typing
-set mouse=a
-set nobackup
-set noswapfile
 set autoread
-set wmh=0                                                        " minimum window height
-set listchars=tab:▸\ ,eol:●                                      " Use custom characters for tabstops and EOLs
-set nolist                                                       " Dont show special characters by default
+set backspace=indent,eol,start                                   " Make backspace sane.<Paste>
+set ch=1
+set clipboard^=unnamed,unnamedplus                               " set clipboard
+set complete=.,w,b,u,t,i,kspell                                  " Set where vim should look for aut completion
+set completeopt=longest,menuone
 set dictionary=/usr/share/dict/words                             " Set dictionary (Its used with C-X C-K to autocomplete words)
-
-" Set color scheme
-colorscheme tir_black
+set encoding=utf-8                                               " Necessary to show unicode glyphs
+set expandtab                                                    " converts tabs to white space
+set hidden
+set hlsearch                                                     " highlight search results
+set ignorecase                                                   " Do case insensitive matching
+set laststatus=2                                                 " always put a status line in, even if there is only one window
+set listchars=tab:▸\ ,eol:●                                      " Use custom characters for tabstops and EOLs
+set mouse=a
+set mousehide                                                    " hide mouse while typing
+set nobackup
+set nocompatible                                                 " Disable compatibility to old-time vi
+set nolist                                                       " Dont show special characters by default
+set noshowmode                                                   " dont show current mode as its visible in lightline instead
+set noswapfile
+set novb
+set nowrap
+set number                                                       " add line numbers
+set shell=bash
+set shiftwidth=2                                                 " width for autoindents
+set shortmess+=I                                                 " startup message
+set showcmd                                                      " Show the current command in the lower right corner
+set showmatch                                                    " Show matching brackets.
+set smartcase
+set smartindent                                                  " smart indentation when starting a new line
+set softtabstop=2                                                " see multiple spaces as tabstops so <BS> does the right thing
+set stl=%f\ %m\ %r\ Line:%l/%L[%p%%]\ Col:%c\ Buf:%n\ [%b][0x%B] " Status line
+set tabstop=2                                                    " number of columns occupied by a tab character
+set wildignore+=*-min.js,*-build.js                              " ignore minified files
+set wildignore+=*/dist/*,*/coverage/*                            " ignore dist and coverage files
+set wildignore+=.git/*,*/.git/*,*.DS_Store,*/node_modules/*      " ignore project related files
+set wildmode=longest,list                                        " get bash-like tab completions
+set wmh=0                                                        " minimum window height
+set termguicolors                                              " Use real colors.
+set signcolumn=yes                                               " Sign column always on
+set background=dark
 
 " Keys
 
@@ -102,12 +101,12 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'w0rp/ale'
   let g:ale_linters = {'javascript': ['eslint']}
   let g:ale_javascript_eslint_executable = './node_modules/.bin/eslint'
-  let g:ale_sign_column_always = 1
-  let g:ale_sign_error = '✗'
+  let g:ale_sign_error = 'x'
   let g:ale_sign_warning = '▲'
+  let g:ale_sign_column_always = 1
   let g:ale_statusline_format = ['✗ %d', '▲ %d', '⬥ ok']
-  let g:ale_lint_on_enter = 0
-  let g:ale_set_highlights = 0
+  let g:ale_lint_on_enter = 1
+  let g:ale_set_highlights = 1
 
   nmap ]l :ALENextWrap<CR>
   nmap [l :ALEPreviousWrap<CR>
@@ -177,6 +176,21 @@ call plug#begin('~/.config/nvim/plugged')
   let g:NERDTreeChDirMode = 2
   let g:NERDTreeMinimalUI = 1
   let g:NERDTreeIgnore=['node_modules', 'build', 'coverage']
+  let NERDTreeShowHidden=1
+		" let NERDTreeDirArrowExpandable = '▷'
+		" let NERDTreeDirArrowCollapsible = '▼'
+		let g:NERDTreeIndicatorMapCustom = {
+		\ "Modified"  : "✹",
+		\ "Staged"	  : "✚",
+		\ "Untracked" : "✭",
+		\ "Renamed"   : "➜",
+		\ "Unmerged"  : "═",
+		\ "Deleted"   : "✖",
+		\ "Dirty"	  : "✗",
+		\ "Clean"	  : "✔︎",
+		\ 'Ignored'   : '☒',
+		\ "Unknown"   : "?"
+		\ }
 
   " Prevent deleting nerdtree buffer
   autocmd FileType nerdtree cnoreabbrev <buffer> bd :call g:WorkaroundNERDTreeToggle()<cr>
@@ -325,6 +339,13 @@ call plug#begin('~/.config/nvim/plugged')
   if !has('gui_running')
     set t_Co=256
   endif
+
+  " Syntax Attribute Checker
+  Plug 'vim-scripts/SyntaxAttr.vim'
+  nmap <leader>c	:call SyntaxAttr()<CR>
+
+  " Base-16
+  Plug 'Soares/base16.nvim'
 call plug#end()
 
 " CSS
@@ -355,7 +376,30 @@ highlight NonText guifg=#124956
 " Toggle list, showing or hiding special chars
 nmap <leader>l :setlocal list!<cr>
 
-
 " netrw settings
 let g:netrw_banner = 0
 let g:netrw_browse_split = 0
+
+" ============================================================================
+" Color management ===========================================================
+let g:base16_transparent_background = 0
+
+" Changes to the base theme
+let g:base16_color_modifiers = {
+      \ 'ErrorMsg': 'fg=red bg=none none',
+      \ 'Comment': 'fg=green'}
+
+" Hacks to prevent me from writing my own syntax files
+let g:base16_color_overrides = {
+      \ 'vimCommentTitle': 'fg=yellow italic',
+      \ 'ALEErrorSign': 'fg=red bg=similar3 bold',
+      \ 'ALEWarningSign': 'fg=orange bg=similar3 bold',
+      \ 'fzf1': 'fg=red bg=similar2',
+      \ 'fzf2': 'fg=contrast1 bg=similar2',
+      \ 'fzf3': 'fg=contrast2 bg=similar2',
+      \ 'GitGutterAdd': 'fg=green bg=similar3',
+      \ 'GitGutterChange': 'fg=yellow bg=similar3',
+      \ 'GitGutterDelete': 'fg=red bg=similar3',
+      \ 'GitGutterChangeDelete': 'fg=orange bg=similar3'}
+
+colorscheme default
