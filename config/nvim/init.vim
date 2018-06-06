@@ -257,16 +257,8 @@ call plug#begin('~/.config/nvim/plugged')
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
 
-  " Javascript Statical Analysis
-  Plug 'ternjs/tern_for_vim'
-
   " Deoplete Async completetion framework
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-  " Deoplete ternjs
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-  let g:tern#command = ["tern"]
-  let g:tern#arguments = ["--persistent"]
 
   " JavaScript Parameter Complete
   Plug 'othree/jspc.vim'
