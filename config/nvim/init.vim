@@ -257,13 +257,6 @@ call plug#begin('~/.config/nvim/plugged')
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
 
-  " Utlisnips
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-
-  let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips']
-  let g:UltiSnipsEditSplit="vertical"
-
   " Javascript Statical Analysis
   Plug 'ternjs/tern_for_vim'
 
