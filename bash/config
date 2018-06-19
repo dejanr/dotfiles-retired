@@ -77,4 +77,4 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 base16_default-dark
 
 # FZF default command
-export FZF_DEFAULT_COMMAND='ag -l -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
