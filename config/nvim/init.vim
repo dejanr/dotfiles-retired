@@ -75,16 +75,6 @@ let g:plug_window  = 'enew'
 let g:plug_pwindow = 'vertical rightbelow new'
 
 call plug#begin('~/.config/nvim/plugged')
-  " Ack
-  Plug 'mileszs/ack.vim'
-  let g:ackprg = 'ag --nogroup --nocolor --column'
-
-  " Ag
-  Plug 'rking/ag.vim'
-
-  let g:ag_prg = 'ag --nogroup --nocolor --column'
-  let g:ag_working_path_mode="r"
-
   " Git 
   Plug 'gregsexton/gitv'
   nmap <leader>g :Gstatus<cr>
@@ -135,6 +125,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   nmap <C-p> :FZF<cr>
 
+
   " FZF color scheme updater from https://github.com/junegunn/fzf.vim/issues/59
   function! s:update_fzf_colors()
     let rules =
@@ -164,11 +155,23 @@ call plug#begin('~/.config/nvim/plugged')
     let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts .
           \ (empty(cols) ? '' : (' --color='.join(cols, ',')))
   endfunction
-
+ 
   augroup _fzf
     autocmd!
     autocmd VimEnter,ColorScheme * call <sid>update_fzf_colors()
   augroup END
+
+  " --column: Show column number
+  " --line-number: Show line number
+  " --no-heading: Do not show file headings in results
+  " --fixed-strings: Search term as a literal string
+  " --ignore-case: Case insensitive search
+  " --no-ignore: Do not respect .gitignore, etc...
+  " --hidden: Search hidden files and folders
+  " --follow: Follow symlinks
+  " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+  " --color: Search color options
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
   " NERDTree
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeFocus' }
@@ -177,20 +180,22 @@ call plug#begin('~/.config/nvim/plugged')
   let g:NERDTreeMinimalUI = 1
   let g:NERDTreeIgnore=['node_modules', 'build', 'coverage']
   let NERDTreeShowHidden=1
-		" let NERDTreeDirArrowExpandable = '▷'
-		" let NERDTreeDirArrowCollapsible = '▼'
-		let g:NERDTreeIndicatorMapCustom = {
-		\ "Modified"  : "✹",
-		\ "Staged"	  : "✚",
-		\ "Untracked" : "✭",
-		\ "Renamed"   : "➜",
-		\ "Unmerged"  : "═",
-		\ "Deleted"   : "✖",
-		\ "Dirty"	  : "✗",
-		\ "Clean"	  : "✔︎",
-		\ 'Ignored'   : '☒',
-		\ "Unknown"   : "?"
-		\ }
+  let NERDTreeDirArrowExpandable = '▷'
+  let NERDTreeDirArrowCollapsible = '▼'
+  let g:NERDTreeIndicatorMapCustom = {
+  \ "Modified"  : "✹",
+  \ "Staged"	  : "✚",
+  \ "Untracked" : "✭",
+  \ "Renamed"   : "➜",
+  \ "Unmerged"  : "═",
+  \ "Deleted"   : "✖",
+  \ "Dirty"	  : "✗",
+  \ "Clean"	  : "✔︎",
+  \ 'Ignored'   : '☒',
+  \ "Unknown"   : "?"
+  \ }
+
+  set grepprg=rg\ --vimgrep
 
   " Prevent deleting nerdtree buffer
   autocmd FileType nerdtree cnoreabbrev <buffer> bd :call g:WorkaroundNERDTreeToggle()<cr>
@@ -257,23 +262,8 @@ call plug#begin('~/.config/nvim/plugged')
   " Start interactive EasyAlign for a motion/text object (e.g. gaip)
   nmap ga <Plug>(EasyAlign)
 
-  " Utlisnips
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-
-  let g:UltiSnipsSnippetDirectories = ['~/.config/nvim/UltiSnips', 'UltiSnips']
-  let g:UltiSnipsEditSplit="vertical"
-
-  " Javascript Statical Analysis
-  Plug 'ternjs/tern_for_vim'
-
   " Deoplete Async completetion framework
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
-  " Deoplete ternjs
-  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-  let g:tern#command = ["tern"]
-  let g:tern#arguments = ["--persistent"]
 
   " JavaScript Parameter Complete
   Plug 'othree/jspc.vim'

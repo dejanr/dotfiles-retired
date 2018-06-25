@@ -32,20 +32,11 @@ if [ which brew 2> /dev/null > /dev/null ]; then
   [[ -r $(brew --prefix)/etc/bash_completion ]] && . $(brew --prefix)/etc/bash_completion
 fi
 
-# nix env
-[ -f ~/.nix-profile/etc/profile.d/nix.sh ] && . ~/.nix-profile/etc/profile.d/nix.sh
-
 # local env variables
 [ -f ~/.local.env ] && . ~/.local.env
 
 # opam toolchain
 . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/dranis/Library/google-cloud-sdk/path.bash.inc' ]; then source '/Users/dranis/Library/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/dranis/Library/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/dranis/Library/google-cloud-sdk/completion.bash.inc'; fi
 
 source ~/.dotfiles/bash/paths
 source ~/.dotfiles/bash/functions
@@ -76,9 +67,6 @@ complete -cf sudo
 # NPM log level
 export npm_config_loglevel=warn
 
-# rbenv
-if [ which rbenv 2> /dev/null > /dev/null ]; then eval "$(rbenv init -)"; fi
-
 # Disable XOFF
 stty ixany
 stty ixoff -ixon
@@ -88,13 +76,5 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 base16_default-dark
 
-# Nix On OSX
-
-if [[ "$(uname -s)" == "Darwin" ]]; then
-  if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-  fi
-fi
-
 # FZF default command
-export FZF_DEFAULT_COMMAND='ag -l -g ""'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
