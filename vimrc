@@ -111,7 +111,6 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'ElmCast/elm-vim'
   Plug 'jnwhiteh/vim-golang'
-  Plug 'sickill/vim-pasta'
   Plug 'othree/html5.vim'
   Plug 'groenewege/vim-less'
   Plug 'christoomey/vim-tmux-navigator'
