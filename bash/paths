@@ -13,7 +13,8 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
   fi
 fi
 
-export PATH="$HOME/.npm/bin:node_modules/.bin:$HOME/.bin:/run/current-system/sw/bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH"
+export PATH="$HOME/.npm/bin:node_modules/.bin:$HOME/.bin:/run/wrappers/bin:/run//current-system/sw/bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
 export NIX_PATH=nixpkgs=/etc/nixos/nixpkgs:nixos-config=/etc/nixos/configuration.nix:$NIX_PATH
 export NIX_PATH=darwin=/etc/nixos/darwin:darwin-config=/etc/nixos/machines/darwin.nix:$NIX_PATH
