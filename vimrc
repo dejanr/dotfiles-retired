@@ -144,7 +144,7 @@ call plug#begin('~/.vim/plugged')
   let g:prettier#exec_cmd_async = 1
   let g:prettier#autoformat = 0
   let g:prettier#quickfix_enabled = 0
-  autocmd BufWritePre *.js,*.md PrettierAsync
+  "autocmd BufWritePre *.js,*.md PrettierAsync
 
   " Org Mode
   Plug 'tpope/vim-repeat'
@@ -152,7 +152,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'vim-scripts/SyntaxRange'
   Plug 'tpope/vim-speeddating'
   " Silence vim-orgmode Speeddating missing
-  command -nargs=* -range SpeedDatingFormat
+  command! -nargs=* -range SpeedDatingFormat
   Plug 'jceb/vim-orgmode'
 
   " More focus
@@ -521,3 +521,5 @@ set dictionary=/usr/share/dict/words
 " Using gf to jump to node js file
 set suffixesadd+=.js
 set path+=$PWD/node_modules
+
+nnoremap <leader>4 :e! %<cr>
