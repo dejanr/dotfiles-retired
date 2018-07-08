@@ -1,0 +1,8 @@
+#!/usr/bin/env rofi-menugen
+#begin main
+prompt="Select:"
+  add_exec 'lock'   'i3exit lock'
+  add_exec 'sleep'  'i3exit suspend'
+  add_exec 'reboot' 'i3exit reboot'
+  add_exec 'shutdown' 'i3exit shutdown'
+#end main
