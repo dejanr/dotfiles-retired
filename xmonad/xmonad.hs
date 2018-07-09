@@ -314,7 +314,7 @@ projects =
 
 --myTerminal          = "terminator"
 --myTerminalClass     = "Terminator"
-myTerminal          = "urxvtc"
+myTerminal          = "termite"
 myAltTerminal       = "termite"
 myBrowser           = "browser" -- chrome with WS profile dirs
 myBrowserClass      = "google-chrome-stable"
