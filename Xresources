@@ -177,16 +177,16 @@ URxvt.resize-font.bigger: C-M-Up
 URxvt.resize-font.reset: C-M-0
 URxvt.resize-font.show: C-M-question
 
-URxvt.keysym.M-1: command:    \033]710;xft:DejaVu Sans Mono:size=11\007\
-                              \033]711;xft:DejaVu Sans Mono:size=11\007
-URxvt.keysym.M-2: command:    \033]710;xft:DejaVu Sans Mono:size=13\007\
+URxvt.keysym.M-1: command:    \033]710;xft:DejaVu Sans Mono:size=13\007\
                               \033]711;xft:DejaVu Sans Mono:size=13\007
-URxvt.keysym.M-3: command:    \033]710;xft:DejaVu Sans Mono:size=15\007\
+URxvt.keysym.M-2: command:    \033]710;xft:DejaVu Sans Mono:size=15\007\
                               \033]711;xft:DejaVu Sans Mono:size=15\007
-URxvt.keysym.M-4: command:    \033]710;xft:DejaVu Sans Mono:size=18\007\
+URxvt.keysym.M-3: command:    \033]710;xft:DejaVu Sans Mono:size=18\007\
                               \033]711;xft:DejaVu Sans Mono:size=18\007
-URxvt.keysym.M-5: command:    \033]710;xft:DejaVu Sans Mono:size=24\007\
+URxvt.keysym.M-4: command:    \033]710;xft:DejaVu Sans Mono:size=24\007\
                               \033]711;xft:DejaVu Sans Mono:size=24\007
+URxvt.keysym.M-5: command:    \033]710;xft:DejaVu Sans Mono:size=28\007\
+                              \033]711;xft:DejaVu Sans Mono:size=28\007
 
 URxvt*saveLines: 12000
 URxvt*scrollstyle:plain
