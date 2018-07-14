@@ -433,11 +433,11 @@ focusColor  = blue
 unfocusColor = base02
 
 myFont      = "xft:DejaVu Sans Mono:"
-            ++ "style=Regular:size=12:hinting=true"
-myBigFont   = "xft:DejaVu Sans Mono:"
-            ++ "style=Regular:size=14:hinting=true"
+            ++ "style=Regular:size=15"
+myBigFont   = "xft:DejaVu Sans Mono"
+            ++ "style=Regular:size=18"
 myWideFont  = "xft:DejaVu Sans Mono:"
-            ++ "style=Regular:pixelsize=180:hinting=true"
+            ++ "style=Regular:pixelsize=120:hinting=true"
 
 -- this is a "fake title" used as a highlight bar in lieu of full borders
 -- (I find this a cleaner and less visually intrusive solution)
