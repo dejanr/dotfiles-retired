@@ -1,0 +1,11 @@
+rofi.modi: ssh,window,combi,run
+rofi.theme: solarized
+
+! Layout
+rofi.width:              40
+rofi.column:             4
+rofi.location:           0
+rofi.lines:              8
+rofi.padding:            50
+rofi.sidebar-mode:       false
+rofi.fullscreen:         false
