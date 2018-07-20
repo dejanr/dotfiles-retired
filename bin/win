@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+WINIMG=/home/dejanr/qemu/os_iso/win10.iso
+VIRTIMG=/home/dejanr/qemu/os_iso/virtio-win.iso
+
+cp -f /nix/store/q6c0mjfx8qhhzi529kwd44m8rr9xssci-OVMF-2017-12-05-fd/FV/OVMF_VARS.fd /home/dejanr/qemu/vm/win10/ovmf_vars.fd
+
+qemu-system-x86_64 \
+-enable-kvm \
+-cpu host,hv_time,hv_relaxed,hv_vapic,hv_spinlocks=0x1fff,kvm=off,hv_vendor_id= \
+-smp cores=4,threads=2 \
+-m 16384 \
+-drive driver=raw,file=/home/dejanr/qemu/vm/win10/hdd.img,if=virtio \
+-net nic,model=virtio -net user -cdrom ${WINIMG} \
+-drive file=${VIRTIMG},index=3,media=cdrom \
+-rtc base=localtime,clock=host 
+-usb -device usb-tablet \
+-device vfio-pci,host=41:00.0,multifunction=on,x-vga=on \
+-device vfio-pci,host=41:00.1 \
+-device virtio-net,netdev=network0 -netdev tap,id=network0,ifname=tap0,script=no,downscript=no
+
+#-drive if=pflash,format=raw,readonly,file=/nix/store/q6c0mjfx8qhhzi529kwd44m8rr9xssci-OVMF-2017-12-05-fd/FV/OVMF_CODE.fd \
+#-drive if=pflash,format=raw,file=/home/dejanr/qemu/vm/win10/ovmf_vars.fd \

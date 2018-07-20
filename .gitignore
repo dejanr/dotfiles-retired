@@ -81,3 +81,6 @@ config/google-chrome-stable
 config/google-chrome-stable-wrk
 config/fontconfig/conf.d
 config/fontconfig/fonts.conf
+config/pcmanfm
+config/qalculate
+config/transmission
