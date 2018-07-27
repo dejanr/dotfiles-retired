@@ -336,6 +336,9 @@ call plug#begin('~/.config/nvim/plugged')
 
   " Base-16
   Plug 'Soares/base16.nvim'
+
+	" GraphQL
+  Plug 'jparise/vim-graphql'
 call plug#end()
 
 " CSS

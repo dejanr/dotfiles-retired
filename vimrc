@@ -145,7 +145,7 @@ call plug#begin('~/.vim/plugged')
   let g:prettier#exec_cmd_async = 1
   let g:prettier#autoformat = 0
   let g:prettier#quickfix_enabled = 0
-  "autocmd BufWritePre *.js,*.md PrettierAsync
+  autocmd BufWritePre *.js,*.md PrettierAsync
 
   " Org Mode
   Plug 'tpope/vim-repeat'
