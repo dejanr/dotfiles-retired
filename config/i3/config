@@ -1,3 +1,8 @@
+smart_gaps on
+smart_borders on
+gaps inner 2
+gaps outer 1
+
 # Constants
 set $mod Mod4
 
@@ -69,8 +74,9 @@ mode "  " {
 }
 
 bindsym $mod+Escape mode "$mode_system"
-set $mode_system System: (l)ock   log(o)ut   (s)uspend   (r)eboot   (p)oweroff
+set $mode_system System:  (s)leep (l)ock   log(o)ut   (s)uspend   (r)eboot   (p)oweroff
 mode "$mode_system" {
+    bindsym s exec xset dpms force off, mode "default"
     bindsym l exec ~/.bin/lock, mode "default"
     bindsym e exec i3-msg exit, mode "default"
     bindsym s exec systemctl suspend, mode "default"

@@ -1,0 +1,329 @@
+"" {
+  styles {
+    // --- buttons ------------------------------------
+    Button
+    {     
+	font-family=basefont
+	font-size=20
+	font-weight=400
+	font-style=uppercase
+	textcolor="Text"
+    }
+    CheckButton
+    {
+      font-family=basefont
+      font-size=20
+      font-weight=400
+      textcolor="Label"
+    }
+    IndeterminateCheckButton
+    {
+	font-family=basefont
+	font-size=20
+	font-weight=400
+	textcolor="Label"
+    }
+    ComboBox
+    {
+      textcolor="Text"
+      font-family=basefont
+      font-size=20
+      selectedtextcolor="TextEntrySelected"
+      selectedbgcolor="TextSelectedBG"
+    }
+    Label
+    {
+	textcolor="Label"
+	selectedtextcolor="Text"
+	font-family=basefont
+	font-size=20
+	font-weight=400
+    }
+    ListPanel
+    {
+	font-family=basefont
+	font-size=20
+	font-weight=400
+	textcolor="text2"
+	selectedtextcolor="TextSelected"
+	selectedbgcolor="Focus"
+	shadowtextcolor="TextDisabled"	// the color of disabled line items
+    }
+    ListPanelCheckBox
+    {
+	font-family=basefont
+	font-size=20
+	font-weight=400
+	textcolor="Label"
+    }
+
+    "ListPanelColumnheader ListPanelCheckBox"
+    {
+	font-family=basefont
+	font-size=20
+	font-weight=400
+	textcolor="Label"
+    }
+     
+    "ListPanelColumnheader ListPanelCheckBox:focus"
+    {
+      font-family=basefont
+      font-size=20
+      font-weight=400
+      textcolor="TextHover"
+    }
+
+    ListPanelColumnHeader:hover
+    {
+	textcolor="Texthover"
+    }
+      
+    "Csteamrootdialog ListPanelColumnheader"
+    {
+	font-family=basefont
+	font-size=20
+	font-size=18 [$OSX]
+	font-weight=400
+	textcolor="label"
+	font-style="uppercase"
+    }
+
+   
+    "Csteamrootdialog ListPanelColumnHeader:hover"
+    {
+	textcolor="TextHover"
+    }
+
+    ListPanelColumnheader
+    {
+	font-family=basefont
+	font-size=14
+	font-size=13 [$OSX]
+	font-weight=400
+	textcolor="label"
+	font-style="uppercase"
+    }
+
+    "Page ListPanel"
+    {
+	font-family=basefont
+	font-size=20
+	font-weight=400
+	textcolor="Text2"
+	selectedtextcolor="TextSelected"
+	selectedbgcolor="Focus"
+    }
+    "CGamesListPanel"
+    {
+      font-family=basefont
+      font-size=26
+      font-weight=400
+      textcolor="Text"
+      selectedtextcolor="textselected"
+      selectedbgcolor="Focus"
+      shadowtextcolor="TextDisabled"
+    }
+    "GameColumn_BigText"
+		{
+		font-family=basefont
+		font-size=24
+		font-weight=700
+		textcolor="text"
+    }
+
+    // --- frame ------------------------------------
+    FrameTitle
+    {
+		font-family=basefont
+		font-size=20
+		font-weight=400
+		textcolor="buttonborderfocus"
+		bgcolor="none"
+    }
+    FrameTitle:framefocus
+    {
+		font-family=basefont
+		font-size=20
+		font-weight=400
+		bgcolor="none"
+		textcolor="texthover"
+		textcolor="texthover" [$OSX]
+    }
+
+    // --- friend list ------------------------------------
+    CFriendsListSectionAffordance
+    {     
+      font-size=20
+      font-weight=400
+      textcolor="Label"
+    }
+    CFriendsListSectionHeader
+    {
+      font-family=basefont
+      font-size=14
+      font-size=13 [$OSX]
+      font-weight=400
+      textcolor="texthover"
+    }       
+    CFriendPanel
+    {
+      font-family=basefont
+      font-size=20
+      font-size=18 [$OSX]
+      font-weight=400
+      textcolor="label"
+    }
+    "CFriendsDialog SectionedListPanelInterior"
+    {
+	font-family=basefont
+	font-size=20
+	font-weight=400
+	textcolor="Text"
+	selectedtextcolor="TextSelected"
+	selectedbgcolor="Focus"
+	shadowtextcolor="TextDisabled"	// the color of disabled line items		
+    }
+
+    // --- newsitem --------------------------------------
+	gamedetails-headerlabel-green
+	{
+		font-size="24"
+		font-style="normal"
+		textcolor="GameDetailsGreen"
+		font-family=basefont
+		font-weight=700
+		font-style="uppercase;"
+	}
+
+	gamedetails-headerlabel-blue
+	{
+		font-size="24"
+		font-style="normal"
+		textcolor="GameDetailsBlue"
+		font-family=basefont
+		font-weight=700
+		font-style="uppercase;"
+	}
+	gamedetails-headerlabel
+	{
+		font-size="24"
+		font-style="normal"
+		font-family=basefont
+		font-weight=700
+		textcolor="Text"
+		font-style="uppercase;"
+	}
+
+	gamedetails-headerlabel-red
+	{
+		font-size="24"
+		font-style="normal"
+		font-family=basefont
+		font-weight=700
+		textcolor="GameDetailsRed"
+		font-style="uppercase;"
+	}
+
+    newsitem_body
+    {
+        font-size=20
+    }
+
+    // --- rightcolumnlink ------------------------------------
+
+    rightcolumnlink
+    {
+        font-size=20
+    }
+
+
+    // --- menu ------------------------------------
+	Menu
+    {
+		bgcolor="MenuBG2"
+    }
+      
+    MenuBar
+    {
+    }
+    
+    "Page MenuBar"
+    {
+    }
+    
+    "MenuBar MenuButton" 
+	{
+		textcolor="buttonborder"
+	}
+	
+ 	"MenuBar MenuButton:frameFocus" 
+	{
+		textcolor="labeldisabled"
+	}
+	
+	"MenuBar MenuButton:frameFocus:hover" 
+	{
+		textcolor="texthover"
+	}
+	
+	"MenuBar MenuButton:frameFocus:selected" 
+	{
+		textcolor="texthover"
+	}
+	
+    MenuButton
+    {
+      font-family=basefont
+      font-size=20
+      font-weight=400
+      textcolor="scrollglyph"
+    }  
+   
+    MenuButton:hover
+    {
+      textcolor="white"
+    }
+    
+    MenuButton:selected
+    {
+		textcolor="white"
+    }
+        
+    MenuItem
+    {
+		font-family=basefont
+		textcolor="label"
+		font-size=20
+		font-weight=400
+    }
+   
+  MenuItem:selected
+    {
+		textcolor="TextHover"
+    }
+	
+  MenuItem:hover
+    {
+		textcolor="white"
+    }
+    
+    MenuItem:disabled
+    {
+		textcolor="labeldisabled"
+		shadowtextcolor=none
+    }
+    
+    MenuItem:disabled:hover
+    {
+		textcolor="labeldisabled"
+		shadowtextcolor=none
+    }
+   
+    MenuSeparator
+    {
+		textcolor="divider"
+    }
+
+  }
+}
+

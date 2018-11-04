@@ -557,7 +557,7 @@ myLayoutHook = showWorkspaceName
 
     addTopBar           = noFrillsDeco shrinkText topBarTheme
 
-    mySpacing           = spacing gap
+    mySpacing           = spacingRaw gap
     sGap                = quot gap 2
     myGaps              = gaps [(U, gap),(D, gap),(L, gap),(R, gap)]
     mySmallGaps         = gaps [(U, sGap),(D, sGap),(L, sGap),(R, sGap)]
@@ -1185,8 +1185,8 @@ myKeys conf = let
     , ("M-z u"                  , addName "Focus urgent"                    focusUrgent)
     , ("M-z m"                  , addName "Focus master"                    $ windows W.focusMaster)
 
-    --, ("M-<Tab>"              	, addName "Focus down"                      $ windows W.focusDown)
-    --, ("M-S-<Tab>"              , addName "Focus up"                        $ windows W.focusUp)
+    --, ("M-<Tab>"              , addName "Focus down"                      $ windows W.focusDown)
+    --, ("M-S-<Tab>"            , addName "Focus up"                        $ windows W.focusUp)
 
     , ("M-'"                    , addName "Navigate tabs D"                 $ bindOn LD [("Tabs", windows W.focusDown), ("", onGroup W.focusDown')])
     , ("M-;"                    , addName "Navigate tabs U"                 $ bindOn LD [("Tabs", windows W.focusUp), ("", onGroup W.focusUp')])
@@ -1354,10 +1354,10 @@ myKeys conf = let
     --  ("M4-C-S-."               , addName "toSubl Shrink"               $ toSubl Shrink)
     --, ("M4-C-S-,"               , addName "toSubl Expand"               $ toSubl Expand)
     ]
-		where
-			toggleCopyToAll = wsContainingCopies >>= \ws -> case ws of
-							[] -> windows copyToAll
-							_ -> killAllOtherCopies
+      where
+      toggleCopyToAll = wsContainingCopies >>= \ws -> case ws of
+        [] -> windows copyToAll
+        _ -> killAllOtherCopies
 
     -----------------------------------------------------------------------
     -- Screens
