@@ -1,5 +1,5 @@
 XDG_DESKTOP_DIR="$HOME/"
-XDG_DOCUMENTS_DIR="/home/dejanr"
+XDG_DOCUMENTS_DIR="/home/dejanr/documents"
 XDG_DOWNLOAD_DIR="$HOME/downloads/"
 XDG_MUSIC_DIR="/home/dejanr"
 XDG_PICTURES_DIR="/home/dejanr"
