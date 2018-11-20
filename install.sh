@@ -14,3 +14,11 @@ for location in $(find $HOME/.dotfiles -maxdepth 1 -name '*' ! -path '*.git'| so
   name=$(basename $location)
   link "$HOME/.dotfiles/$name" "$HOME/.$name"
 done
+
+if [ -e "$HOME/.spacemacs" ] || [ -e "$HOME/.spacemacs.d" ]; then
+    echo "Spacemacs configuration alreay exists"
+else
+    ln -s "$DOTFILES/spacemacs.d" "$HOME/.spacemacs.d"
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    echo "Configured and downloaded Spacemacs."
+fi
