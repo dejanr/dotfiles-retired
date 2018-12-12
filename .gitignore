@@ -84,3 +84,8 @@ config/fontconfig/fonts.conf
 config/pcmanfm
 config/qalculate
 config/transmission
+config/CCP
+config/pavucontrol.ini
+config/pavucontrol-qt
+GIMP
+config/Meltytech/

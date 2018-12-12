@@ -15,7 +15,7 @@ for location in $(find $HOME/.dotfiles -maxdepth 1 -name '*' ! -path '*.git'| so
   link "$HOME/.dotfiles/$name" "$HOME/.$name"
 done
 
-if [ -e "$HOME/.spacemacs" ] || [ -e "$HOME/.spacemacs.d" ]; then
+if [ -e "$HOME/.spacemacs.d" ]; then
     echo "Spacemacs configuration alreay exists"
 else
     ln -s "$DOTFILES/spacemacs.d" "$HOME/.spacemacs.d"
