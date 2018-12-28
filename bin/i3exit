@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
 case "$1" in
-  lock)
-    lock
-    ;;
   logout)
     i3-msg exit
     ;;
