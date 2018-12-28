@@ -1,0 +1,13 @@
+[ConfigDialog]
+Height 800=277
+Width 1280=377
+
+[MainWindow]
+Height 800=776
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAAAnwAAAMIAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1280=636
+
+[Notification Messages]
+FontSettingsChanged=false

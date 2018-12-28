@@ -1,0 +1,8 @@
+[PlasmaViews][Panel 2][Horizontal2560]
+thickness=36
+
+[ScreenConnectors]
+0=eDP1
+
+[Updates]
+performed=/run/current-system/sw/share/plasma/shells/org.kde.plasma.desktop/contents/updates/obsolete_kickoffrc.js

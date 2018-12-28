@@ -1,0 +1,15 @@
+#! /bin/sh
+# kcminputrc Mouse cursorTheme 'breeze_cursors'
+kcminputrc_mouse_cursortheme=breeze_cursors
+# kcminputrc Mouse cursorSize ''
+kcminputrc_mouse_cursorsize=0
+# ksplashrc KSplash Theme org.kde.breeze.desktop
+ksplashrc_ksplash_theme=org.kde.breeze.desktop
+# ksplashrc KSplash Engine KSplashQML
+ksplashrc_ksplash_engine=KSplashQML
+# kdeglobals KScreen ScreenScaleFactors ''
+kdeglobals_kscreen_screenscalefactors='eDP1=1.5;DP1=1.5;DP2=1.5;HDMI1=1.5;HDMI2=1.5;VIRTUAL1=1.5;'
+# kcmfonts General forceFontDPI 0
+kcmfonts_general_forcefontdpi=115
+# kcmfonts General dontChangeAASettings true
+kcmfonts_general_dontchangeaasettings=true

@@ -1,0 +1,21 @@
+[$Version]
+update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar
+
+[General]
+XftHintStyle=hintfull
+XftSubPixel=rgb
+fixed=Hack,9,-1,5,50,0,0,0,0,0
+font=Sans Serif,9,-1,5,50,0,0,0,0,0
+menuFont=Sans Serif,9,-1,5,50,0,0,0,0,0
+smallestReadableFont=Sans Serif,9,-1,5,50,0,0,0,0,0
+toolBarFont=Sans Serif,9,-1,5,50,0,0,0,0,0
+
+[Icons]
+Theme=breeze-dark
+
+[KScreen]
+ScaleFactor=1.5
+ScreenScaleFactors=eDP1=1.5;DP1=1.5;DP2=1.5;HDMI1=1.5;HDMI2=1.5;VIRTUAL1=1.5;
+
+[WM]
+activeFont=Sans Serif,9,-1,5,50,0,0,0,0,0
