@@ -64,9 +64,6 @@
   show = diff-so-fancy | less -RFXx1,5
 
 
-[interactive]
-  diffFilter = diff-so-fancy
-
 [advice]
   statusHints = no
 
