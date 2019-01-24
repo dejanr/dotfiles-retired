@@ -455,7 +455,7 @@ map <leader>ss :setlocal spell!<cr>
 " => MISC
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>rm mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+noremap <Leader>rm :%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly ope a buffer for scripbble
 map <leader>oq :e ~/buffer<cr>
