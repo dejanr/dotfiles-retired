@@ -4,7 +4,7 @@ gaps inner 2
 gaps outer 1
 
 # Constants
-set $mod Mod1
+set $mod Mod4
 
 set $base00 #181818
 set $base01 #282828
@@ -143,6 +143,9 @@ bindsym $mod+Shift+0 move container to workspace $workspace10; workspace $worksp
 assign [class="Pronterface.py"] $workspace5
 assign [class="Cura"] $workspace5
 assign [class=".slic3r.pl-wrapped"] $workspace5
+assign [class="Slack"] $workspace10
+assign [class="Mail"] $workspace9
+assign [class="Daily"] $workspace9
 
 # fix graphics glitch
 new_window none
@@ -206,12 +209,11 @@ bar {
   }
 }
 
-# split in vertical orientation
-bindsym $mod+s split v
-# split in horizontal orientation
-bindsym $mod+v split h
+# toggle split orientation
+bindsym $mod+t split toggle
 
 # applications
 bindsym $mod+n exec pcmanfm
+bindsym $mod+s exec slack
 bindsym $mod+Shift+b exec --no-startup-id corebird
 bindsym $mod+Shift+r exec --no-startup-id ~/.bin/remind-me

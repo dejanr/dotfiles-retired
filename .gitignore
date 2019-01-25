@@ -89,3 +89,6 @@ config/pavucontrol.ini
 config/pavucontrol-qt
 GIMP
 config/Meltytech/
+config/zoomus.conf
+config/google-chrome-beta/
+config/Unknown Organization/
