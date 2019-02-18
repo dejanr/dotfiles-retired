@@ -219,3 +219,9 @@ bindsym $mod+n exec pcmanfm
 bindsym $mod+s exec slack
 bindsym $mod+Shift+b exec --no-startup-id corebird
 bindsym $mod+Shift+r exec --no-startup-id ~/.bin/remind-me
+
+
+# Windows switching
+
+bindsym $mod+Tab workspace prev
+bindsym Mod1+Tab focus right
