@@ -223,5 +223,5 @@ bindsym $mod+Shift+r exec --no-startup-id ~/.bin/remind-me
 
 # Windows switching
 
-bindsym $mod+Tab workspace prev
+bindsym $mod+Tab workspace back_and_forth
 bindsym Mod1+Tab focus right
